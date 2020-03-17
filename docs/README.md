@@ -1,6 +1,5 @@
-# `matchbook`
-#### Pattern Matching in JS & TS
-###### Draws:
+# `matchbook` - Pattern Matching in TypeScript & JavaScript
+### Why `matchbook`:
 - **_zero_** dependencies
 - **_almost_** zero boilerplate
 - Simple
