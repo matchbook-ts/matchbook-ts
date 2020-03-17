@@ -14,19 +14,15 @@ declare const val: unknown;
 
 enum MyEnum { Value }
 
-const typeInfo: string = strike(
-  42,
-  match(v => typeof v === 'string', 'it\'s a string!'),
-  match(MyEnum.Value, 'it\'s in my enum!'),
-  match(isNaN, 'i don\'t even know what that is'),
-  match(
-      v => typeof v === 'number',
-      n => `it's a number! Here, I'll prove it, here's its square: ${Math.pow(n, 2)}`
-  ),
+const typeInfo: string = strike(42,
+  match(isNaN,                      "i don't even know what that is"),
+  match(MyEnum.Value,               "it's in my enum!"),
+  match(v => typeof v === 'string', "it's a string!"),
+  match(v => typeof v === 'number', n => `it's a number! Here's its square: ${Math.pow(n, 2)}`),
   otherwise('couldn\'t tell ya!'),
 );
 
-assertEq(typeInfo, 'it\'s a number!');
+assertEq(typeInfo, "it's a number! Here's its square: 1764");
 ```
 
 ### What is Pattern Matching?
