@@ -14,7 +14,8 @@ declare const val: unknown;
 
 enum MyEnum { Value }
 
-const typeInfo: string = strike(42,
+const typeInfo: string = strike(
+  42,
   match(isNaN,                      "i don't even know what that is"),
   match(MyEnum.Value,               "it's in my enum!"),
   match(v => typeof v === 'string', "it's a string!"),
