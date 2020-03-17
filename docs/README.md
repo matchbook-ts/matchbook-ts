@@ -8,6 +8,7 @@
 
 ---
 
+A useless example:
 ```ts
 // we don't know!
 declare const val: unknown;
