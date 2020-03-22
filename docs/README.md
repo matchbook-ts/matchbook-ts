@@ -1,4 +1,7 @@
+<img src="../assets/logo.png" width="400" />
+
 # `matchbook` - Pattern Matching in TypeScript & JavaScript
+
 ### Why `matchbook`:
 - **_zero_** dependencies
 - Reliable
