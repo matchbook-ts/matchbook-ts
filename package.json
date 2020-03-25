@@ -15,7 +15,7 @@
     "prepare": "npm run compile",
     "posttest": "npm run check"
   },
-  "dependencies": { },
+  "noDependenciesHere!!!": { },
   "devDependencies": {
     "@types/chai": "^4.2.9",
     "@types/mocha": "^7.0.1",
