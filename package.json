@@ -32,6 +32,7 @@
     "tslint": "^6.0.0"
   },
   "ava": {
+    "files": ["./test/**/*"],
     "extensions": ["ts"],
     "require": ["ts-node/register"]
   },

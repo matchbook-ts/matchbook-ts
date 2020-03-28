@@ -1,5 +1,4 @@
 import { DefaultMatcher, Matcher, MatchResult, Problem } from '../types';
-import { strike } from './strike';
 
 /**
  * @description

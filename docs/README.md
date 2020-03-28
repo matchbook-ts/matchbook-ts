@@ -1,4 +1,4 @@
-<img src="../assets/logo.png" width=500/>
+<img src="../assets/logo.png" width=500 alt="Project Logo" />
 
 # matchbook
 
@@ -7,15 +7,14 @@
 ---
 
 ### Why you may consider using `matchbook`:
-- it has **_zero_** dependencies
-    - _package size: **(npm badge here)**_
-- reliable _**(code cov badge here)**_
+- it has **_zero_** dependencies _**(npm badge here)**_
+- reliable [![build][build_badge]][build_link] [![codecov][codecov_badge]][codecov_link]
 - simple API
 - smart types
 
 ---
 
-<img src="../assets/readme_samples/abc_123.png" width=500/>
+<img src="../assets/readme_samples/abc_123.png" width="500" alt="It's as easy as A-B-C 1-2-3"/>
 
 ---
 
@@ -40,7 +39,12 @@ Coming soon - `typedoc`
 #### Handle objects that differ by a discriminator
 _A Discriminator is a fancy word for a property on an object
 that tells you what kind of object it is._
-<img src="../assets/readme_samples/discriminator_example.png" width=500/>
+
+<img src="../assets/readme_samples/discriminator_example.png" width=500 alt="Code sample" />
 
 [liga]: https://github.com/ToxicFrog/Ligaturizer
 [rust_match]: https://doc.rust-lang.org/book/ch06-02-match.html
+[codecov_link]: https://codecov.io/gh/cakekindel/matchbook
+[codecov_badge]: https://codecov.io/gh/cakekindel/matchbook/branch/master/graph/badge.svg
+[build_link]: https://travis-ci.org/cakekindel/matchbook
+[build_badge]: https://travis-ci.org/cakekindel/matchbook.svg?branch=master
