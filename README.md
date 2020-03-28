@@ -1,4 +1,4 @@
-<img src="../assets/logo.png" width=500 alt="Project Logo" />
+<img src="./assets/logo.png" width=500 alt="Project Logo" />
 
 # matchbook
 
@@ -17,7 +17,7 @@
 
 ---
 
-<img src="../assets/readme_samples/abc_123.png" width="500" alt="It's as easy as A-B-C 1-2-3"/>
+<img src="./assets/readme_samples/abc_123.png" width="500" alt="It's as easy as A-B-C 1-2-3"/>
 
 ---
 
@@ -43,7 +43,7 @@ Coming soon - `typedoc`
 _A Type Guard is a function that returns a bool
 for a value, indicating whether the value is a certain type._[<sup>[TS Docs]</sup>][type_guards]
 
-<img src="../assets/readme_samples/type_guard_example.png" width=500 alt="Code sample" />
+<img src="./assets/readme_samples/type_guard_example.png" width=500 alt="Code sample" />
 
 [liga]: https://github.com/ToxicFrog/Ligaturizer
 [rust_match]: https://doc.rust-lang.org/book/ch06-02-match.html
