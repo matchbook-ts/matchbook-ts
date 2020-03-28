@@ -1,4 +1,4 @@
-import { anything } from './any';
+import { anything } from './alias';
 import { DefaultMatcher, Matcher } from './matcher';
 import { Problem } from './problem';
 

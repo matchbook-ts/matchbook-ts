@@ -1,5 +1,5 @@
 import { DefaultMatcher, Transformer } from '../types';
-import { anything } from '../types/any';
+import { anything } from '../types/alias';
 
 /**
  * @description

@@ -1,4 +1,5 @@
-import { Ctor, Matcher, Transformer } from '../types';
+import { Matcher, Transformer } from '../types';
+import { Ctor } from '../types/alias';
 
 /**
  * @description

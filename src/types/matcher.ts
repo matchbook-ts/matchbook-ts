@@ -1,4 +1,4 @@
-import { anything } from './any';
+import { anything } from './alias';
 import { Matched, Unmatched } from './match-tracker';
 
 /**

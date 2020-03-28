@@ -3,6 +3,9 @@
 # matchbook
 
 ### Pattern Matching in TypeScript & JavaScript
+#### ❗ Notice ❗
+##### This project is in active development! 🚧🏗👷‍♂️
+##### Watch the repository for releases to get notified when version 1 is released!
 
 ---
 
@@ -36,11 +39,11 @@ Coming soon - `typedoc`
 
 ### Examples
 
-#### Handle objects that differ by a discriminator
-_A Discriminator is a fancy word for a property on an object
-that tells you what kind of object it is._
+#### Match with a Type Guard
+_A Type Guard is a function that returns a bool
+for a value, indicating whether the value is a certain type._[<sup>[TS Docs]</sup>][type_guards]
 
-<img src="../assets/readme_samples/discriminator_example.png" width=500 alt="Code sample" />
+<img src="../assets/readme_samples/type_guard_example.png" width=500 alt="Code sample" />
 
 [liga]: https://github.com/ToxicFrog/Ligaturizer
 [rust_match]: https://doc.rust-lang.org/book/ch06-02-match.html
@@ -48,3 +51,4 @@ that tells you what kind of object it is._
 [codecov_badge]: https://codecov.io/gh/cakekindel/matchbook/branch/master/graph/badge.svg
 [build_link]: https://travis-ci.org/cakekindel/matchbook
 [build_badge]: https://travis-ci.org/cakekindel/matchbook.svg?branch=master
+[type_guards]: https://www.typescriptlang.org/docs/handbook/advanced-types.html#user-defined-type-guards
