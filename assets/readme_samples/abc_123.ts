@@ -1,3 +1,5 @@
+/* istanbul ignore file */
+
 import { match, pattern } from '../../src';
 
 const A = 'A', B = 'B', C = 'C';

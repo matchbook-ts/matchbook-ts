@@ -1,3 +1,5 @@
+/* istanbul ignore file */
+
 import * as assert from 'assert';
 import { match, pattern, _ } from '../../src';
 
