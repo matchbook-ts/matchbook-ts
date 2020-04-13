@@ -47,8 +47,8 @@ for a value, indicating whether the value is a certain type._[<sup>[TS Docs]</su
 
 [liga]: https://github.com/ToxicFrog/Ligaturizer
 [rust_match]: https://doc.rust-lang.org/book/ch06-02-match.html
-[codecov_link]: https://codecov.io/gh/cakekindel/matchbook
-[codecov_badge]: https://codecov.io/gh/cakekindel/matchbook/branch/master/graph/badge.svg
-[build_link]: https://travis-ci.org/cakekindel/matchbook
-[build_badge]: https://travis-ci.org/cakekindel/matchbook.svg?branch=master
+[codecov_link]: https://codecov.io/gh/matchbook-ts/matchbook-ts
+[codecov_badge]: https://codecov.io/gh/matchbook-ts/matchbook-ts/branch/master/graph/badge.svg
+[build_link]: https://travis-ci.org/matchbook-ts/matchbook-ts
+[build_badge]: https://travis-ci.org/matchbook-ts/matchbook-ts.svg?branch=master
 [type_guards]: https://www.typescriptlang.org/docs/handbook/advanced-types.html#user-defined-type-guards
