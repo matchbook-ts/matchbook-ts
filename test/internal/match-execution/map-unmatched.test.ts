@@ -13,7 +13,7 @@ test('`mapUnmatched` should return value, when mapOrVal is value', t => {
     const actual = mapUnmatched(input, expected).val;
 
     // assert
-    t.deepEqual(actual, expected);
+    t.is(actual, expected);
 });
 
 test('`mapUnmatched` should return output of mapper, when mapOrVal is fn', t => {
@@ -29,5 +29,5 @@ test('`mapUnmatched` should return output of mapper, when mapOrVal is fn', t => 
     const actual = mapUnmatched(input, expected).val;
 
     // assert
-    t.deepEqual(actual, 32 + 10);
+    t.is(actual, 32 + 10);
 });

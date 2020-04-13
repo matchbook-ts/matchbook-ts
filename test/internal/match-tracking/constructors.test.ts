@@ -14,7 +14,7 @@ test('`trackMatched` should return object of type Matched wrapping val', t => {
     const actual = trackMatched(val);
 
     // assert
-    t.deepEqual(actual, {_matchstate: MatchState.Matched, val});
+    t.is(actual, {_matchstate: MatchState.Matched, val});
 });
 
 test('`trackUnmatched` should return object of type Matched wrapping val', t => {
@@ -25,5 +25,5 @@ test('`trackUnmatched` should return object of type Matched wrapping val', t => 
     const actual = trackUnmatched(val);
 
     // assert
-    t.deepEqual(actual, {_matchstate: MatchState.Unmatched, val});
+    t.is(actual, {_matchstate: MatchState.Unmatched, val});
 });

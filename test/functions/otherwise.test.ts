@@ -14,7 +14,7 @@ test('`otherwise` should match using map fn, when input unmatched', t => {
     const actual = otherwise(mapper)(input);
 
     // assert
-    t.deepEqual(actual.val, 'input_fart');
+    t.is(actual.val, 'input_fart');
 });
 
 test('`otherwise` should match using default value, when input unmatched', t => {
@@ -26,7 +26,7 @@ test('`otherwise` should match using default value, when input unmatched', t => 
     const actual = otherwise(expected)(input);
 
     // assert
-    t.deepEqual(actual.val, expected);
+    t.is(actual.val, expected);
 });
 
 test('`otherwise` should return input, when input already matched', t => {
@@ -38,7 +38,7 @@ test('`otherwise` should return input, when input already matched', t => {
     const actual = otherwise(mapper)(input);
 
     // assert
-    t.deepEqual(actual, input);
+    t.is(actual, input);
 });
 
 test('`otherwise` should not invoke mapper, when input already matched', t => {
@@ -50,5 +50,5 @@ test('`otherwise` should not invoke mapper, when input already matched', t => {
     otherwise(mapper)(input);
 
     // assert
-    t.deepEqual(mapper.callCount, 0);
+    t.is(mapper.callCount, 0);
 });

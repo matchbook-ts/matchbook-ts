@@ -18,7 +18,7 @@ test('`matchValueTester` should match, when input deep equals value', t => {
     const actual = matchValueTester(input, Coin.Dime, expected);
 
     // assert
-    t.deepEqual(actual.val, expected);
+    t.is(actual.val, expected);
 });
 test('`matchValueTester` should not match, when input does not deep equal constant value', t => {
     // arrange
@@ -30,5 +30,5 @@ test('`matchValueTester` should not match, when input does not deep equal consta
     const actual = matchValueTester(input, Coin.Nickel, transform);
 
     // assert
-    t.deepEqual(actual, input);
+    t.is(actual, input);
 });

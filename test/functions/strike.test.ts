@@ -16,7 +16,7 @@ test('`strike` should return matcher output, when input matches', t => {
     const actual = strike(1234, matcher);
 
     // assert
-    t.deepEqual(actual, expected);
+    t.is(actual, expected);
 });
 
 test('`strike` should not invoke arms after matched arm', t => {
@@ -32,5 +32,5 @@ test('`strike` should not invoke arms after matched arm', t => {
     const actual = strike(input, matcherA, matcherB, matcherC);
 
     // assert
-    t.deepEqual(actual, output);
+    t.is(actual, output);
 });

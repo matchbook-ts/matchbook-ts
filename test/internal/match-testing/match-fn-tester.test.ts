@@ -22,7 +22,7 @@ test('`matchFnTester` should match, when input deep equals return value of funct
     const actual = matchFnTester(input, () => Coin.Nickel, expected);
 
     // assert
-    t.deepEqual(actual.val, expected);
+    t.is(actual.val, expected);
 });
 
 test('`matchFnTester` should not match, when input does not deep equal return value of function', t => {
@@ -35,7 +35,7 @@ test('`matchFnTester` should not match, when input does not deep equal return va
     const actual = matchFnTester(input, () => Coin.Quarter, transform);
 
     // assert
-    t.deepEqual(actual, input);
+    t.is(actual, input);
 });
 
 test('`matchFnTester` should match, when input satisfies predicate', t => {
@@ -47,7 +47,7 @@ test('`matchFnTester` should match, when input satisfies predicate', t => {
     const actual = matchFnTester(input, isNaN, expected);
 
     // assert
-    t.deepEqual(actual.val, expected);
+    t.is(actual.val, expected);
 });
 
 test('`matchFnTester` should not match, when input does not satisfy predicate', t => {
@@ -61,7 +61,7 @@ test('`matchFnTester` should not match, when input does not satisfy predicate', 
     const actual = matchFnTester(input, predicate, transform);
 
     // assert
-    t.deepEqual(actual, input);
+    t.is(actual, input);
 });
 
 test('`matchFnTester` should only invoke delegate once, when input unmatched', t => {
@@ -73,7 +73,7 @@ test('`matchFnTester` should only invoke delegate once, when input unmatched', t
     matchFnTester(input, del, {});
 
     // assert
-    t.deepEqual(del.callCount, 1);
+    t.is(del.callCount, 1);
 });
 
 test('`matchFnTester` should never invoke delegate, when input matched', t => {
@@ -89,7 +89,7 @@ test('`matchFnTester` should never invoke delegate, when input matched', t => {
     matchFnTester(input, del, onMatch);
 
     // assert
-    t.deepEqual(del.callCount, 0);
+    t.is(del.callCount, 0);
 });
 
 test('`matchFnTester` should never throw, when delegate is a class constructor', t => {

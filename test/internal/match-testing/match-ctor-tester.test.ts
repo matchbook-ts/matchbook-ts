@@ -19,7 +19,7 @@ test('`matchCtorTester` should match, when input is an instance of a constructor
     const actual = matchCtorTester(input, CoinBook, expected);
 
     // assert
-    t.deepEqual(actual.val, expected);
+    t.is(actual.val, expected);
 });
 test('`matchCtorTester` should not match, when input is not an instance of a constructor', t => {
     // arrange
@@ -31,7 +31,7 @@ test('`matchCtorTester` should not match, when input is not an instance of a con
     const actual = matchCtorTester(input, CoinBook, transform);
 
     // assert
-    t.deepEqual(actual, input);
+    t.is(actual, input);
 });
 
 test('`matchCtorTester` should never invoke constructor, when input unmatched', t => {
@@ -51,7 +51,7 @@ test('`matchCtorTester` should never invoke constructor, when input unmatched', 
     );
 
     // assert
-    t.deepEqual(constructCount, 0);
+    t.is(constructCount, 0);
 });
 test('`matchCtorTester` should never invoke constructor, when input matched', t => {
     // arrange
@@ -66,5 +66,5 @@ test('`matchCtorTester` should never invoke constructor, when input matched', t 
     matchCtorTester(input, del, onMatch);
 
     // assert
-    t.deepEqual(del.callCount, 0);
+    t.is(del.callCount, 0);
 });
