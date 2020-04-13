@@ -16,8 +16,7 @@
     "compile": "tsc",
     "fix": "gts fix src/**/*.ts && gts fix test/**/*.ts",
     "prepare": "npm run compile",
-    "posttest": "npm run check",
-    "pretest": "npm run compile"
+    "posttest": "npm run check"
   },
   "files": ["./lib/**/*"],
   "dependencies": {},
