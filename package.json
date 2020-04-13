@@ -1,11 +1,13 @@
 {
-  "name": "matchbook",
+  "name": "@matchbook/matchbook",
   "author": "Orion Kindel",
   "version": "0.1.0",
   "license": "MIT",
   "repository": "https://github.com/cakekindel/matchbook",
   "homepage": "https://github.com/cakekindel/matchbook",
   "bugs": "https://github.com/cakekindel/matchbook/issues",
+  "types": "./lib/index.d.ts",
+  "main": "./lib/index.js",
   "scripts": {
     "test": "nyc ava",
     "test:debug": "nyc ava debug --break --serial",
@@ -17,6 +19,7 @@
     "posttest": "npm run check",
     "pretest": "npm run compile"
   },
+  "files": ["./lib/**/*"],
   "dependencies": {},
   "devDependencies": {
     "@types/chai": "^4.2.9",
