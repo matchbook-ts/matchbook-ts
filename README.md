@@ -14,13 +14,16 @@ Watch the repository for releases to get notified when version 1 is released!
     -   API is just **5 functions**, and some aliases
     -   Well documented (TODO: typedoc)
     -   **Powerful type inference** backed by ![top lang][lang_badge]
+
 -   costs almost nothing to use
     -   **_zero_** runtime dependencies
     -   [![pkg size][npm_size_badge]][npm_link]
+
 -   reliable
     -   comprehensive automated tests backed by [![ava][ava_dep_badge]][ava_npm]
     -   100% code coverage [![codecov][codecov_badge]][codecov_link]
     -   All pull requests & commits to `master` built via Travis CI [![build][build_badge]][build_link]
+
 ---
 
 <img src="./assets/readme_samples/abc_123.png" width="500" alt="It's as easy as A-B-C 1-2-3"/>
