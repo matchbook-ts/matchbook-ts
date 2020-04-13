@@ -2,6 +2,8 @@
 
 # matchbook
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/4d572370f8cf4c89bac4467da581c504)](https://app.codacy.com/gh/matchbook-ts/matchbook-ts?utm_source=github.com&utm_medium=referral&utm_content=matchbook-ts/matchbook-ts&utm_campaign=Badge_Grade_Dashboard)
+
 ### Pattern Matching in TypeScript & JavaScript
 #### ❗ Notice ❗
 ##### This project is in active development! 🚧🏗👷‍♂️
