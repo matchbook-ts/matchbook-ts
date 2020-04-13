@@ -12,6 +12,7 @@
     "test": "nyc ava",
     "test:debug": "nyc ava debug --break --serial",
     "tdd": "nyc ava --watch",
+    "check:md": "remark .",
     "check": "gts check src/**/*.ts && gts check test/**/*.ts",
     "compile": "tsc",
     "fix": "gts fix src/**/*.ts && gts fix test/**/*.ts",
@@ -49,5 +50,8 @@
   "nyc": {
     "all": true,
     "reporter": "lcov"
+  },
+  "remarkConfig": {
+    "plugins": ["remark-preset-lint-recommended"]
   }
 }

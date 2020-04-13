@@ -50,7 +50,6 @@ This project takes heavy inspiration from
 [codecov_badge]: https://codecov.io/gh/matchbook-ts/matchbook-ts/branch/master/graph/badge.svg
 [build_link]: https://travis-ci.org/matchbook-ts/matchbook-ts
 [build_badge]: https://travis-ci.org/matchbook-ts/matchbook-ts.svg?branch=master
-[type_guards]: https://www.typescriptlang.org/docs/handbook/advanced-types.html#user-defined-type-guards
 [npm_ver_badge]: https://img.shields.io/npm/v/@matchbook/ts
 [npm_size_badge]: https://img.shields.io/bundlephobia/min/@matchbook/ts
 [npm_link]: https://www.npmjs.com/package/@matchbook/ts
