@@ -1,7 +1,7 @@
 <img src="./assets/logo.png" width=500 alt="Project Logo" />
 
 # matchbook
-[![npm version][npm_ver_badge]][npm_link] [![source rank][source_rank_badge]][libraries_io] ![license][license_badge]
+[![npm version][npm_ver_badge]][npm_link] [![codacy][codacy_badge]][codacy_link] [![source rank][source_rank_badge]][libraries_io] ![license][license_badge]
 ## Pattern Matching in TypeScript & JavaScript
 ### ❗ Notice ❗
 #### This project is in active development! 🚧🏗👷‍♂️
@@ -57,3 +57,5 @@ This project takes heavy inspiration from
 [libraries_io]: https://libraries.io/npm/@matchbook%2Fts
 [ava_dep_badge]: https://img.shields.io/github/package-json/dependency-version/matchbook-ts/matchbook-ts/dev/ava
 [ava_npm]: https://www.npmjs.com/package/ava
+[codacy_badge]: https://api.codacy.com/project/badge/Grade/dd3aa51feb4b4b9988d2a1c9ea543187
+[codacy_link]: https://www.codacy.com/gh/matchbook-ts/matchbook-ts?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=matchbook-ts/matchbook-ts&amp;utm_campaign=Badge_Grade
