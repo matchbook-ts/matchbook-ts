@@ -1,4 +1,4 @@
-import { otherwise, match, strike, pattern, unwrap } from './functions';
+import {otherwise, match, strike, pattern, unwrap} from './public';
 
 // prettier-ignore
 export {
@@ -7,8 +7,9 @@ export {
     pattern as book,
     match,
     match as m,
+    match as arm,
+    otherwise,
     otherwise as _,
     otherwise as rest,
-    otherwise,
     unwrap,
 };
