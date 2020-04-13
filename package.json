@@ -1,7 +1,7 @@
 {
   "name": "@matchbook/matchbook",
   "author": "Orion Kindel",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "license": "MIT",
   "repository": "https://github.com/matchbook-ts/matchbook-ts",
   "homepage": "https://github.com/matchbook-ts/matchbook-ts",
@@ -18,7 +18,9 @@
     "prepare": "npm run compile",
     "posttest": "npm run check"
   },
-  "files": ["./lib/**/*"],
+  "files": [
+    "./lib/**/*"
+  ],
   "dependencies": {},
   "devDependencies": {
     "@types/chai": "^4.2.9",
