@@ -1,12 +1,14 @@
 /* istanbul ignore file */
 
 import * as assert from 'assert';
-import { match, pattern, _ } from '../../src';
+import {match, pattern, _} from '../../src';
 
 declare let message: MessageEvent;
 
-interface Event { /* ... */ }
-interface MessageEvent extends Event { /* ... */ }
+interface Event {
+    /* ... */
+}
+type MessageEvent = Event;
 
 declare function isMessage(e: Event): e is MessageEvent;
 

@@ -8,12 +8,14 @@
   "bugs": "https://github.com/cakekindel/matchbook/issues",
   "scripts": {
     "test": "nyc ava",
-    "check": "gts check",
-    "clean": "gts clean",
-    "compile": "tsc -p .",
-    "fix": "gts fix",
+    "test:debug": "nyc ava debug --break --serial",
+    "tdd": "nyc ava --watch",
+    "check": "gts check src/**/*.ts && gts check test/**/*.ts",
+    "compile": "tsc",
+    "fix": "gts fix src/**/*.ts && gts fix test/**/*.ts",
     "prepare": "npm run compile",
-    "posttest": "npm run check"
+    "posttest": "npm run check",
+    "pretest": "npm run compile"
   },
   "dependencies": {},
   "devDependencies": {
@@ -22,19 +24,25 @@
     "@types/sinon": "^7.5.1",
     "ava": "^3.5.1",
     "chai": "^4.2.0",
+    "gts": "^2.0.0",
     "sinon": "^9.0.0",
-    "typescript": "^3.8.2"
+    "typescript": "~3.8.0"
   },
   "optionalDependencies": {
-    "gts": "^1.1.2",
     "nyc": "^15.0.0",
     "ts-node": "^8.8.1",
     "tslint": "^6.0.0"
   },
   "ava": {
-    "files": ["./test/**/*"],
-    "extensions": ["ts"],
-    "require": ["ts-node/register"]
+    "files": [
+      "./test/**/*.test.ts"
+    ],
+    "extensions": [
+      "ts"
+    ],
+    "require": [
+      "ts-node/register"
+    ]
   },
   "nyc": {
     "all": true,
