@@ -6,8 +6,8 @@
   "repository": "https://github.com/cakekindel/matchbook",
   "homepage": "https://github.com/cakekindel/matchbook",
   "bugs": "https://github.com/cakekindel/matchbook/issues",
-  "types": "./lib/index.d.ts",
-  "main": "./lib/index.js",
+  "types": "./lib/src/index.d.ts",
+  "main": "./lib/src/index.js",
   "scripts": {
     "test": "nyc ava",
     "test:debug": "nyc ava debug --break --serial",
