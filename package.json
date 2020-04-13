@@ -3,9 +3,9 @@
   "author": "Orion Kindel",
   "version": "0.1.0",
   "license": "MIT",
-  "repository": "https://github.com/cakekindel/matchbook",
-  "homepage": "https://github.com/cakekindel/matchbook",
-  "bugs": "https://github.com/cakekindel/matchbook/issues",
+  "repository": "https://github.com/matchbook-ts/matchbook-ts",
+  "homepage": "https://github.com/matchbook-ts/matchbook-ts",
+  "bugs": "https://github.com/matchbook-ts/matchbook-ts/issues",
   "types": "./lib/src/index.d.ts",
   "main": "./lib/src/index.js",
   "scripts": {
