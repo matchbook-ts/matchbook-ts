@@ -1,27 +1,33 @@
 <img src="./assets/logo.png" width=500 alt="Project Logo" />
 
 # matchbook
-
-### Pattern Matching in TypeScript & JavaScript
-#### ❗ Notice ❗
-##### This project is in active development! 🚧🏗👷‍♂️
-##### Watch the repository for releases to get notified when version 1 is released!
+[![npm version][npm_ver_badge]][npm_link] [![source rank][source_rank_badge]][libraries_io] ![license][license_badge]
+## Pattern Matching in TypeScript & JavaScript
+### ❗ Notice ❗
+#### This project is in active development! 🚧🏗👷‍♂️
+Watch the repository for releases to get notified when version 1 is released!
 
 ---
 
-### Why you may consider using `matchbook`:
-- it has **_zero_** dependencies _**(npm badge here)**_
-- reliable [![build][build_badge]][build_link] [![codecov][codecov_badge]][codecov_link]
-- simple API
-- smart types
-
+#### Matchbook Goals
+-   simple & powerful API
+    -   API is just **5 functions**, and some aliases
+    -   Well documented (TODO: typedoc)
+    -   **Powerful type inference** backed by ![top lang][lang_badge]
+-   costs almost nothing to use
+    -   **_zero_** runtime dependencies
+    -   [![pkg size][npm_size_badge]][npm_link]
+-   reliable
+    -   comprehensive automated tests backed by [![ava][ava_dep_badge]][ava_npm]
+    -   100% code coverage [![codecov][codecov_badge]][codecov_link]
+    -   builds powered by Travis CI [![build][build_badge]][build_link]
 ---
 
 <img src="./assets/readme_samples/abc_123.png" width="500" alt="It's as easy as A-B-C 1-2-3"/>
 
 ---
 
-### What is Pattern Matching?
+### Pattern Matching Explained
 Pattern matching is a  modern language feature
 that acts like a `switch` / `case` statement
 on steroids 💊💪.
@@ -34,21 +40,20 @@ and want to handle the different cases in a
 This project takes heavy inspiration from
 [Rust's pattern matching idiom][rust_match].
 
-### API Docs
-Coming soon - `typedoc`
-
 ### Examples
 
-#### Match with a Type Guard
-_A Type Guard is a function that returns a bool
-for a value, indicating whether the value is a certain type._[<sup>[TS Docs]</sup>][type_guards]
-
-<img src="./assets/readme_samples/type_guard_example.png" width=500 alt="Code sample" />
-
-[liga]: https://github.com/ToxicFrog/Ligaturizer
 [rust_match]: https://doc.rust-lang.org/book/ch06-02-match.html
 [codecov_link]: https://codecov.io/gh/matchbook-ts/matchbook-ts
 [codecov_badge]: https://codecov.io/gh/matchbook-ts/matchbook-ts/branch/master/graph/badge.svg
 [build_link]: https://travis-ci.org/matchbook-ts/matchbook-ts
 [build_badge]: https://travis-ci.org/matchbook-ts/matchbook-ts.svg?branch=master
 [type_guards]: https://www.typescriptlang.org/docs/handbook/advanced-types.html#user-defined-type-guards
+[npm_ver_badge]: https://img.shields.io/npm/v/@matchbook/ts
+[npm_size_badge]: https://img.shields.io/bundlephobia/min/@matchbook/ts
+[npm_link]: https://www.npmjs.com/package/@matchbook/ts
+[lang_badge]: https://img.shields.io/github/languages/top/matchbook-ts/matchbook-ts
+[license_badge]: https://img.shields.io/github/license/matchbook-ts/matchbook-ts
+[source_rank_badge]: https://img.shields.io/librariesio/sourcerank/npm/@matchbook/ts
+[libraries_io]: https://libraries.io/npm/@matchbook%2Fts
+[ava_dep_badge]: https://img.shields.io/github/package-json/dependency-version/matchbook-ts/matchbook-ts/dev/ava
+[ava_npm]: https://www.npmjs.com/package/ava
