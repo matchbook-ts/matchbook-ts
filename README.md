@@ -20,7 +20,7 @@ Watch the repository for releases to get notified when version 1 is released!
 -   reliable
     -   comprehensive automated tests backed by [![ava][ava_dep_badge]][ava_npm]
     -   100% code coverage [![codecov][codecov_badge]][codecov_link]
-    -   builds powered by Travis CI [![build][build_badge]][build_link]
+    -   All pull requests & commits to `master` built via Travis CI [![build][build_badge]][build_link]
 ---
 
 <img src="./assets/readme_samples/abc_123.png" width="500" alt="It's as easy as A-B-C 1-2-3"/>
