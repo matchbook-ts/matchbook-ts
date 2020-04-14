@@ -48,8 +48,8 @@ This project takes heavy inspiration from
 [rust_match]: https://doc.rust-lang.org/book/ch06-02-match.html
 [codecov_link]: https://codecov.io/gh/matchbook-ts/matchbook-ts
 [codecov_badge]: https://codecov.io/gh/matchbook-ts/matchbook-ts/branch/master/graph/badge.svg
-[build_link]: https://travis-ci.org/matchbook-ts/matchbook-ts
-[build_badge]: https://travis-ci.org/matchbook-ts/matchbook-ts.svg?branch=master
+[build_link]: https://travis-ci.com/matchbook-ts/matchbook-ts
+[build_badge]: https://travis-ci.com/matchbook-ts/matchbook-ts.svg?branch=master
 [npm_ver_badge]: https://img.shields.io/npm/v/@matchbook/ts
 [npm_size_badge]: https://img.shields.io/bundlephobia/min/@matchbook/ts
 [npm_link]: https://www.npmjs.com/package/@matchbook/ts
