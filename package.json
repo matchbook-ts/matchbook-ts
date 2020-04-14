@@ -1,7 +1,7 @@
 {
   "name": "@matchbook/ts",
   "author": "Orion Kindel",
-  "version": "0.4.0",
+  "version": "1.0.0-alpha.0",
   "license": "MIT",
   "repository": "https://github.com/matchbook-ts/matchbook-ts",
   "homepage": "https://github.com/matchbook-ts/matchbook-ts",
@@ -20,7 +20,7 @@
     "posttest": "npm run check"
   },
   "files": [
-    "./lib/**/*"
+    "lib/**/*"
   ],
   "dependencies": {},
   "devDependencies": {
