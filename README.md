@@ -26,7 +26,7 @@ Watch the repository for releases to get notified when version 1 is released!
 
 ---
 
-<img src="./assets/readme_samples/abc_123.png" width="500" alt="It's as easy as A-B-C 1-2-3"/>
+![it's as easy as a-b-c 1-2-3](assets/readme_samples/static/abc_123.snippet.png)
 
 ---
 
@@ -43,7 +43,23 @@ and want to handle the different cases in a
 This project takes heavy inspiration from
 [Rust's pattern matching idiom][rust_match].
 
-### Examples
+---
+
+### `matchbook` at a glance
+![matchbook at a glance](assets/readme_samples/static/10-000-feet.snippet.png)
+
+---
+
+### Some Motivating Examples
+
+#### Switching on an `enum`
+![enum example](assets/readme_samples/static/enum.snippet.png)
+
+#### Acting on the type of Event
+![enum example](assets/readme_samples/static/type_guard.snippet.png)
+
+#### Matching if a value is an `instanceof` a constructor
+![enum example](assets/readme_samples/static/ctor.snippet.png)
 
 [rust_match]: https://doc.rust-lang.org/book/ch06-02-match.html
 [codecov_link]: https://codecov.io/gh/matchbook-ts/matchbook-ts
