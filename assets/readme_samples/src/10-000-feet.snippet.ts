@@ -1,5 +1,3 @@
-// `matchbook`, at a glance:
-
 // for a value `val`,
 let output = strike(val,
     match(/* if it matches this */, /* then do this */),
