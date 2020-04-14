@@ -12,8 +12,6 @@ To start using matchbook, install it like any other npm package:
 
 ---
 
-![license][license_badge]
-
 [![npm version][npm_ver_badge]][npm_link]
 [![pkg size][npm_size_badge]][npm_link]
 [![build][build_badge]][build_link]
@@ -22,10 +20,9 @@ To start using matchbook, install it like any other npm package:
 ![top lang][lang_badge]
 [![codacy][codacy_badge]][codacy_link]
 [![codecov][codecov_badge]][codecov_link]
+![license][license_badge]
 
 ![it's as easy as a-b-c 1-2-3](assets/readme_samples/static/abc_123.snippet.png)
-
----
 
 ## table of contents
 
@@ -37,8 +34,6 @@ To start using matchbook, install it like any other npm package:
     -   [acting on the type of an Event](#acting-on-the-type-of-an-event)
     -   [matching if a value is an `instanceof` a constructor](#matching-if-a-value-is-an-instanceof-a-constructor)
 
----
-
 ## library goals
 
 -   **simple** - API is just **5** functions, along with some aliases
@@ -46,8 +41,6 @@ To start using matchbook, install it like any other npm package:
 -   **well documented** - (TODO: typedoc)
 -   **low cost** - no runtime dependencies, small package size
 -   **reliable** - 100% unit test coverage, all pushes verified via Travis CI 
-
----
 
 ## pattern matching explained
 Pattern matching is a  modern language feature
@@ -62,12 +55,8 @@ and want to handle the different cases in a
 This project takes heavy inspiration from
 [Rust's pattern matching idiom][rust_match].
 
----
-
 ## matchbook at a glance
 ![matchbook at a glance](assets/readme_samples/static/10-000-feet.snippet.png)
-
----
 
 ## matchbook at a slightly longer glance
 

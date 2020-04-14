@@ -1,3 +1,7 @@
+import { match, _ } from '@matchbook/ts';
+//             ^^^
+// `_` is an available alias for `otherwise`.
+
 enum EventType { Message, ... }
 interface Event { ... }
 interface MessageEvent extends Event { ... }

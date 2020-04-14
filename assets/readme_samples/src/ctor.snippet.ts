@@ -1,3 +1,5 @@
+import { match, otherwise, pattern } from '@matchbook/ts';
+
 class Human { ... }
 class Teacher extends Human { ... }
 class Spiderman extends Human { ... }
