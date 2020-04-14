@@ -20,7 +20,7 @@
     "posttest": "npm run check"
   },
   "files": [
-    "./lib/**/*"
+    "lib/**/*"
   ],
   "dependencies": {},
   "devDependencies": {
