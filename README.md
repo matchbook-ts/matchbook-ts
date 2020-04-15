@@ -10,7 +10,7 @@ To start using matchbook, install it like any other npm package:
 
 `npm i @matchbook/ts`
 
-If you want to know more about matchbook, keep reading this or [check out the docs!][matchbook_docs]!
+If you want to know more about matchbook, keep reading this or [check out the docs][matchbook_docs]!
 
 ---
  
@@ -61,11 +61,11 @@ This project takes heavy inspiration from
 [Rust's pattern matching idiom][rust_match].
 
 ## matchbook at a glance
-want to know more? [read the docs!][matchbook_docs]
+want to know more? [read the docs][matchbook_docs]!
 ![matchbook at a glance](assets/readme-samples/static/10-000-feet.snippet.png)
 
 ## matchbook at a slightly longer glance
-want to know more? [read the docs!][matchbook_docs]
+want to know more? [read the docs][matchbook_docs]!
 
 ### switching on an `enum`
 ![enum example](assets/readme-samples/static/enum.snippet.png)
