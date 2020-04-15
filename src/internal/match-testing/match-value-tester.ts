@@ -12,7 +12,7 @@ import {MatchTester} from './types';
  * @param rhs
  * @param mapOrVal
  *
- * @access package
+ * @internal
  */
 export const matchValueTester: MatchTester = <TIn, TOut>(
     tracker: TrackedEither<TIn, TOut>,

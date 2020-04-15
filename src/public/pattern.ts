@@ -20,26 +20,29 @@ import {strike} from './strike';
  * matchers passed to {@link pattern}.
  *
  * @see {@link strike}
- * @example
- *   enum Coin {
- *       Quarter,
- *       Nickel,
- *   }
+ * ```typescript
+ * enum Coin {
+ *     Quarter,
+ *     Nickel,
+ * }
  *
- *   // example from `strike`, but shortened using `pattern`.
- *   const getValue: (coin: Coin) => number = pattern(
- *       match(Coin.Quarter, 0.25),
- *       match(Coin.Nickel, 0.05),
- *       otherwise(0)
- *   );
+ * // example from `strike`, but shortened using `pattern`.
+ * const getValue: (coin: Coin) => number = pattern(
+ *     match(Coin.Quarter, 0.25),
+ *     match(Coin.Nickel, 0.05),
+ *     otherwise(0)
+ * );
  *
- *   assertEq(getValue(Coin.Quarter), 0.25);
- *   assertEq(getValue(Coin.Nickel), 0.05);
+ * assertEq(getValue(Coin.Quarter), 0.25);
+ * assertEq(getValue(Coin.Nickel), 0.05);
+ * ```
  */
-export function pattern<TArgs extends Array<MatchExecutor | DefaultExecutor>>(
+function pattern<TArgs extends Array<MatchExecutor | DefaultExecutor>>(
     ...matchers: TArgs
 ): (
     val: InferInputTypeOfExecutors<TArgs>
 ) => InferReturnTypeOfExecutors<TArgs> {
     return val => strike(val, ...matchers);
 }
+
+export {pattern, pattern as book};

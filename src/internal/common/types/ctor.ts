@@ -2,7 +2,7 @@
  * @description
  * A reference to a `new`-able constructor
  *
- * @access package
+ * @internal
  */
 export interface Ctor<T> {
     new (...args: unknown[]): T;

@@ -4,6 +4,6 @@
  * for corner cases that
  * the TypeScript compiler won't catch.
  *
- * @access package
+ * @internal
  */
 export type Problem<WithType, Msg> = [WithType, Msg];

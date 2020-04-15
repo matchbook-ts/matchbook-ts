@@ -12,7 +12,7 @@ import {Ctor, Fn, MapFnOrValue} from '../internal/common';
  * @description
  * ## Match if `val` is an instance of a Constructor
  *
- * @example
+ * ```typescript
  * import { match, strike, otherwise } from 'matchbook';
  *
  * // Get the level of Personal Protective Equipment for each career
@@ -30,8 +30,9 @@ import {Ctor, Fn, MapFnOrValue} from '../internal/common';
  * );
  *
  * assertEq(actual, PpeLevel.Low);
+ * ```
  */
-export function match<TIn, TInExt extends TIn, TOut>(
+function match<TIn, TInExt extends TIn, TOut>(
     ifInstanceOf: Ctor<TInExt>,
     then: MapFnOrValue<TInExt, TOut>
 ): MatchExecutor<TIn, TOut>;
@@ -40,7 +41,7 @@ export function match<TIn, TInExt extends TIn, TOut>(
  * @description
  * ## Match if `val` satisfies a {@link https://www.typescriptlang.org/docs/handbook/advanced-types.html#user-defined-type-guards|Type Guard}
  *
- * @example
+ * ```typescript
  * import { match, strike, otherwise } from 'matchbook';
  *
  * const actual = strike<unknown, string>(
@@ -56,8 +57,9 @@ export function match<TIn, TInExt extends TIn, TOut>(
  * );
  *
  * assertEq(actual, 'sqrt: 2');
+ * ```
  */
-export function match<TIn, TInExt extends TIn, TOut>(
+function match<TIn, TInExt extends TIn, TOut>(
     ifIsType: Fn<(val: TIn) => val is TInExt>,
     then: MapFnOrValue<TInExt, TOut>
 ): MatchExecutor<TIn, TOut>;
@@ -66,7 +68,7 @@ export function match<TIn, TInExt extends TIn, TOut>(
  * @description
  * ## Match if `val` satisfies a Predicate
  *
- * @example
+ * ```typescript
  * import { match, strike, otherwise } from 'matchbook';
  *
  * const actual = strike(
@@ -76,8 +78,9 @@ export function match<TIn, TInExt extends TIn, TOut>(
  * );
  *
  * assertEq(actual, `that's empty! outrageous!`);
+ * ```
  */
-export function match<TIn, TOut>(
+function match<TIn, TOut>(
     ifTrue: Fn<(val: TIn) => boolean>,
     then: MapFnOrValue<TIn, TOut>
 ): MatchExecutor<TIn, TOut>;
@@ -86,7 +89,7 @@ export function match<TIn, TOut>(
  * @description
  * ## Match if `val` equals a lazy value
  *
- * @example
+ * ```typescript
  * import { match, strike, otherwise } from 'matchbook';
  *
  * enum Emoji {
@@ -106,8 +109,9 @@ export function match<TIn, TOut>(
  * );
  *
  * assertEq(actual, 'very popular!');
+ * ```
  */
-export function match<TIn, TOut>(
+function match<TIn, TOut>(
     ifEquals: Fn<() => TIn>,
     then: MapFnOrValue<TIn, TOut>
 ): MatchExecutor<TIn, TOut>;
@@ -116,7 +120,7 @@ export function match<TIn, TOut>(
  * @description
  * ## Match if `val` equals a value
  *
- * @example
+ * ```typescript
  * import { match, strike, otherwise } from 'matchbook';
  *
  * enum Emoji {
@@ -132,13 +136,15 @@ export function match<TIn, TOut>(
  * );
  *
  * assertEq(actual, ':smiley:');
+ * ```
+ * ```
  */
-export function match<TIn, TOut>(
+function match<TIn, TOut>(
     ifEquals: TIn,
     then: MapFnOrValue<typeof ifEquals, TOut>
 ): MatchExecutor<TIn, TOut>;
 
-export function match<TIn, TOut, TInExt extends TIn = TIn>(
+function match<TIn, TOut, TInExt extends TIn = TIn>(
     when:
         | Ctor<TInExt>
         | Fn<(_: TIn) => _ is TInExt>
@@ -165,3 +171,5 @@ export function match<TIn, TOut, TInExt extends TIn = TIn>(
 
     return delegate;
 }
+
+export {match, match as m, match as arm};

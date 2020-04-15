@@ -9,22 +9,23 @@ import {isMatched, trackMatched} from '../internal/match-tracking';
  * constant value of type R or a delegate
  * that returns a value of type R
  *
- * @example
- *   enum Time {
- *       Morning = 'Morning',
- *       Noon = 'Noon',
- *       Afternoon = 'Afternoon',
- *   }
+ * ```typescript
+ * enum Time {
+ *     Morning = 'Morning',
+ *     Noon = 'Noon',
+ *     Afternoon = 'Afternoon',
+ * }
  *
- *   const actual = strike(
- *       'Night',
- *       match(Time.Morning, 'Good morning!'),
- *       otherwise('Goodnight!')
- *   );
+ * const actual = strike(
+ *     'Night',
+ *     match(Time.Morning, 'Good morning!'),
+ *     otherwise('Goodnight!')
+ * );
  *
- *   assertEq(actual, 'Goodnight!');
+ * assertEq(actual, 'Goodnight!');
+ * ```
  */
-export const otherwise: <TIn = any, TOut = any>(
+const otherwise: <TIn = any, TOut = any>(
     useDefault: MapFnOrValue<TIn, TOut>
 ) => DefaultExecutor<TIn, TOut> = useDefault => tracker => {
     if (isMatched(tracker)) return tracker;
@@ -35,3 +36,5 @@ export const otherwise: <TIn = any, TOut = any>(
 
     return trackMatched(defaultValue);
 };
+
+export {otherwise, otherwise as rest, otherwise as _};

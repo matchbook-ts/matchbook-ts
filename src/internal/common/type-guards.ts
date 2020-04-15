@@ -1,7 +1,7 @@
 /**
  * @description type guard, returning whether an input is a Function
  * @param val
- * @access package
+ * @internal
  */
 export function isFn(val: unknown): val is Function {
     return typeof val === 'function';
@@ -13,7 +13,7 @@ export function isFn(val: unknown): val is Function {
  * of invoking a constructor like a function
  *
  * @param error
- * @access package
+ * @internal
  */
 export function isCtorInvokedWithoutNewError(error: unknown): boolean {
     if (error instanceof TypeError) {

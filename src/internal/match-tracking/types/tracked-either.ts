@@ -9,6 +9,6 @@ import {Unmatched} from './unmatched';
  * Used by matchbook to keep track of matching internally.
  * You shouldn't need to reference this type directly.
  *
- * @access package
+ * @internal
  */
 export type TrackedEither<A, B> = Unmatched<A> | Matched<B>;

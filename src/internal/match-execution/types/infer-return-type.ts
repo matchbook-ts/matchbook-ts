@@ -10,7 +10,7 @@ import {UnwrapExecutor} from './unwrap-executor';
  * Internal helper type that infers the TOut type of a collection
  * of MatchExecutors
  *
- * @access package
+ * @internal
  */
 export type InferReturnTypeOfExecutors<TExecs> = TExecs extends Array<
     MatchExecutor<infer TIn, infer TOut>

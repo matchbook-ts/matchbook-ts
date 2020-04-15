@@ -4,7 +4,7 @@ import {TrackedEither} from '../../match-tracking/types';
 /**
  * @description Common type for the different cases supported by {@link match}.
  *
- * @access package
+ * @internal
  */
 export type MatchTester = Fn<
     <T, R>(

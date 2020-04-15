@@ -8,23 +8,24 @@ import {isUnmatched, TrackedEither} from '../internal/match-tracking';
  *
  * I sure hope you know what you are doing!
  *
- * @example
- *    enum Time {
- *        Morning = 'Morning',
- *        Noon = 'Noon',
- *        Afternoon = 'Afternoon',
- *    };
- *    const getMessage = pattern(
- *        match(Time.Morning, 'Good morning!'),
- *        unwrap(),
- *    );
- *    try {
- *        // This will throw!!
- *        getMessage('blarg!');
- *    } catch (e) {
- *        // logs: "Unwrapped pattern didn't satisfy any matchers."
- *        console.error(e.message);
- *    }
+ * ```typescript
+ * enum Time {
+ *     Morning = 'Morning',
+ *     Noon = 'Noon',
+ *     Afternoon = 'Afternoon',
+ * };
+ * const getMessage = pattern(
+ *     match(Time.Morning, 'Good morning!'),
+ *     unwrap(),
+ * );
+ * try {
+ *     // This will throw!!
+ *     getMessage('blarg!');
+ * } catch (e) {
+ *     // logs: "Unwrapped pattern didn't satisfy any matchers."
+ *     console.error(e.message);
+ * }
+ * ```
  */
 export const unwrap: UnwrapExecutor = <TIn, TOut>(
     t: TrackedEither<TIn, TOut>

@@ -16,7 +16,7 @@ import {MatchTester} from './types';
  * @param fn A Predicate OR a function returning a TIn
  * @param transformer
  *
- * @access package
+ * @internal
  */
 export const matchFnTester: MatchTester = <TIn, TOut>(
     tracker: TrackedEither<TIn, TOut>,

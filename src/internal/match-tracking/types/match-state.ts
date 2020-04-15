@@ -5,7 +5,7 @@
  * Used by matchbook to keep track of matching internally.
  * You shouldn't need to reference this type directly.
  *
- * @access package
+ * @internal
  */
 export enum MatchState {
     Matched = 'Matched',
