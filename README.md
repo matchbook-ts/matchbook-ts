@@ -27,8 +27,11 @@ To start using matchbook, install it like any other npm package:
 ## table of contents
 
 -   [library goals](#library-goals)
+
 -   [pattern matching explained](#pattern-matching-explained)
+
 -   [matchbook at a glance](#matchbook-at-a-glance)
+
 -   [matchbook at a slightly longer glance (examples)](#matchbook-at-a-slightly-longer-glance)
     -   [switching on an `enum`](#switching-on-an-enum)
     -   [acting on the type of an Event](#acting-on-the-type-of-an-event)
