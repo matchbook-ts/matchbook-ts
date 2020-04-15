@@ -9,14 +9,17 @@
   "types": "./lib/src/index.d.ts",
   "main": "./lib/src/index.js",
   "scripts": {
+    "pretest": "npm run compile:dev",
     "test": "nyc ava",
     "test:debug": "nyc ava debug --break --serial",
     "tdd": "nyc ava --watch",
     "docs:gen-screenshots": "cd assets/readme_samples && rimraf ./static/**/* && foreach -g \"src/**/*.ts\" -x \"carbon-now #{path} -p matchbook --target static/#{name}\" --no-C",
     "docs:lint": "remark .",
     "check": "gts check src/**/*.ts && gts check test/**/*.ts",
-    "compile": "tsc",
     "fix": "gts fix src/**/*.ts && gts fix test/**/*.ts",
+    "precompile": "rimraf lib",
+    "compile": "tsc",
+    "compile:dev": "tsc -p tsconfig.dev.json",
     "prepare": "npm run compile",
     "posttest": "npm run check"
   },
@@ -46,19 +49,18 @@
     "files": [
       "./test/**/*.test.ts"
     ],
-    "extensions": [
-      "ts"
-    ],
-    "require": [
-      "ts-node/register"
-    ]
+    "typescript": {
+      "rewritePaths": {
+        "test/": "lib/test/",
+        "src/": "lib/src/"
+      }
+    }
   },
   "nyc": {
     "all": true,
     "reporter": "lcov",
-    "include": [
-      "./src/**/*.ts",
-      "./test/**/*.ts"
+    "exclude": [
+      "./assets/**/*"
     ]
   },
   "remarkConfig": {
