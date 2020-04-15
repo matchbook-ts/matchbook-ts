@@ -26,7 +26,6 @@
   ],
   "dependencies": {},
   "devDependencies": {
-    "@ava/typescript": "^1.1.1",
     "@istanbuljs/nyc-config-typescript": "^1.0.1",
     "@types/chai": "^4.2.11",
     "@types/node": "^10.17.19",
