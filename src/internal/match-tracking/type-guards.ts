@@ -5,6 +5,8 @@ import {Matched, MatchState, TrackedEither, Unmatched} from './types';
  * Type guard indicating a tracked value is {@link Unmatched}
  *
  * @param val
+ *
+ * @internal
  */
 export function isUnmatched<T>(
     val: TrackedEither<T, unknown>
@@ -17,6 +19,8 @@ export function isUnmatched<T>(
  * Type guard indicating a tracked value is {@link Matched}
  *
  * @param val
+ *
+ * @internal
  */
 export function isMatched<T>(
     val: TrackedEither<unknown, T>

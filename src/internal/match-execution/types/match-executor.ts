@@ -13,7 +13,7 @@ import {TrackedEither} from '../../match-tracking/types';
  * AND the value is a match, it will
  * transform the value with {@link MapFnOrValue}.
  *
- * @access package
+ * @internal
  */
 export interface MatchExecutor<TIn = any, TOut = any> {
     __exhaustive?: false;

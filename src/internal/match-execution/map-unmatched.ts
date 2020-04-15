@@ -7,7 +7,7 @@ import {Fn, MapFnOrValue} from '../common';
  *
  * Replaces a tracked unmatched value with a tracked matched value from `mapOrVal`.
  *
- * @access package
+ * @internal
  *
  * @param tracker
  * @param mapOrVal

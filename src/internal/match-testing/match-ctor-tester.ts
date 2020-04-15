@@ -12,7 +12,7 @@ import {MatchTester} from './types';
  * @param ctor
  * @param transformer
  *
- * @access package
+ * @internal
  */
 export const matchCtorTester: MatchTester = <TIn, TOut>(
     tracker: TrackedEither<TIn, TOut>,

@@ -10,7 +10,7 @@ import {Matched, MatchState, Unmatched} from './types';
  * @param val
  * value to start tracking
  *
- * @access package
+ * @internal
  */
 export function trackMatched<T>(val: T): Matched<T> {
     return {val, _matchstate: MatchState.Matched};
@@ -26,7 +26,7 @@ export function trackMatched<T>(val: T): Matched<T> {
  * @param val
  * value to start tracking
  *
- * @access package
+ * @internal
  */
 export function trackUnmatched<T>(val: T): Unmatched<T> {
     return {val, _matchstate: MatchState.Unmatched};

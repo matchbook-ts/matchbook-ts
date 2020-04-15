@@ -19,22 +19,23 @@ import {Matched, Unmatched} from '../internal/match-tracking/types';
  * operator in Rust, F#, and other languages
  * with idiomatic Pattern Matching.
  *
- * @example
- *   enum Coin {
- *       Quarter,
- *       Nickel,
- *   }
+ * ```typescript
+ * enum Coin {
+ *     Quarter,
+ *     Nickel,
+ * }
  *
- *   function getValue(coin: Coin): number {
- *       return strike(coin,
- *           match(Coin.Quarter, 0.25),
- *           match(Coin.Nickel, 0.05),
- *           otherwise(0)
- *       );
- *   }
+ * function getValue(coin: Coin): number {
+ *     return strike(coin,
+ *         match(Coin.Quarter, 0.25),
+ *         match(Coin.Nickel, 0.05),
+ *         otherwise(0)
+ *     );
+ * }
  *
- *   assertEq(getValue(Coin.Quarter), 0.25);
- *   assertEq(getValue(Coin.Nickel), 0.05);
+ * assertEq(getValue(Coin.Quarter), 0.25);
+ * assertEq(getValue(Coin.Nickel), 0.05);
+ * ```
  */
 export function strike<
     TIn,

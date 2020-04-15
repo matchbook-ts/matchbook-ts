@@ -6,7 +6,7 @@ import {MatchExecutor} from './match-executor';
  * @description
  * Infer the TIn generic type argument of a collection of Executors
  *
- * @access package
+ * @internal
  */
 export type InferInputTypeOfExecutors<
     TExecs extends unknown[]

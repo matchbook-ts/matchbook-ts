@@ -6,6 +6,6 @@ import {Fn} from './fn';
  * - a mapping function of type `A -> B`
  * - a constant value of type `B`
  *
- * @access package
+ * @internal
  */
 export type MapFnOrValue<TIn, TOut> = TOut | Fn<(val: TIn) => TOut>;
