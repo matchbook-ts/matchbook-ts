@@ -14,7 +14,7 @@
     "tdd": "nyc ava --watch",
     "docs:lint": "remark .",
     "docs:gen-screenshots": "rimraf ./assets/static/**/* && cd assets/readme-samples && foreach -g \\\"src/**/*.ts\\\" -x \\\"carbon-now #{path} -p matchbook --target static/#{name}\\\" --no-C",
-    "docs:gen": "rimraf docs && typedoc src/ --out docs && copyfiles assets/**/*.png docs",
+    "docs:build": "rimraf docs && typedoc src/ --out docs && copyfiles assets/**/*.png docs",
     "check": "gts check src/**/*.ts && gts check test/**/*.ts",
     "fix": "gts fix src/**/*.ts && gts fix test/**/*.ts",
     "compile": "rimraf lib && tsc",
