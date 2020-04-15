@@ -37,10 +37,12 @@ import {strike} from './strike';
  * assertEq(getValue(Coin.Nickel), 0.05);
  * ```
  */
-export function pattern<TArgs extends Array<MatchExecutor | DefaultExecutor>>(
+function pattern<TArgs extends Array<MatchExecutor | DefaultExecutor>>(
     ...matchers: TArgs
 ): (
     val: InferInputTypeOfExecutors<TArgs>
 ) => InferReturnTypeOfExecutors<TArgs> {
     return val => strike(val, ...matchers);
 }
+
+export {pattern, pattern as book};

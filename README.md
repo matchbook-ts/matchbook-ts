@@ -10,8 +10,10 @@ To start using matchbook, install it like any other npm package:
 
 `npm i @matchbook/ts`
 
----
+If you want to know more about matchbook, keep reading this or [check out the docs][matchbook_docs]!
 
+---
+ 
 [![npm version][npm_ver_badge]][npm_link]
 [![pkg size][npm_size_badge]][npm_link]
 [![build][build_badge]][build_link]
@@ -41,7 +43,7 @@ To start using matchbook, install it like any other npm package:
 
 -   **simple** - API is just **5** functions, along with some aliases
 -   **powerful** - type inference backed by Typescript
--   **well documented** - (TODO: typedoc)
+-   **well documented** - [check out the docs here!][matchbook_docs]
 -   **low cost** - no runtime dependencies, small package size
 -   **reliable** - 100% unit test coverage, all pushes verified via Travis CI 
 
@@ -59,9 +61,11 @@ This project takes heavy inspiration from
 [Rust's pattern matching idiom][rust_match].
 
 ## matchbook at a glance
+want to know more? [read the docs][matchbook_docs]!
 ![matchbook at a glance](assets/readme-samples/static/10-000-feet.snippet.png)
 
 ## matchbook at a slightly longer glance
+want to know more? [read the docs][matchbook_docs]!
 
 ### switching on an `enum`
 ![enum example](assets/readme-samples/static/enum.snippet.png)
@@ -72,6 +76,7 @@ This project takes heavy inspiration from
 ### matching if a value is an `instanceof` a constructor
 ![enum example](assets/readme-samples/static/ctor.snippet.png)
 
+[matchbook_docs]: https://matchbook-ts.github.io/matchbook-ts/docs/
 [rust_match]: https://doc.rust-lang.org/book/ch06-02-match.html
 [codecov_link]: https://codecov.io/gh/matchbook-ts/matchbook-ts
 [codecov_badge]: https://codecov.io/gh/matchbook-ts/matchbook-ts/branch/master/graph/badge.svg
