@@ -39,9 +39,7 @@ import {strike} from './strike';
  */
 function pattern<TArgs extends Array<MatchExecutor | DefaultExecutor>>(
     ...matchers: TArgs
-): (
-    val: InferInputTypeOfExecutors<TArgs>
-) => InferReturnTypeOfExecutors<TArgs> {
+): (val: InferInputTypeOfExecutors<TArgs>) => InferReturnTypeOfExecutors<TArgs> {
     return val => strike(val, ...matchers);
 }
 
