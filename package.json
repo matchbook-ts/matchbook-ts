@@ -9,13 +9,17 @@
   "types": "./lib/src/index.d.ts",
   "main": "./lib/src/index.js",
   "scripts": {
+    "pretest": "npm run compile:dev",
     "test": "nyc ava",
     "test:debug": "nyc ava debug --break --serial",
     "tdd": "nyc ava --watch",
-    "check:md": "remark .",
+    "docs:gen-screenshots": "cd assets/readme_samples && rimraf ./static/**/* && foreach -g \"src/**/*.ts\" -x \"carbon-now #{path} -p matchbook --target static/#{name}\" --no-C",
+    "docs:lint": "remark .",
     "check": "gts check src/**/*.ts && gts check test/**/*.ts",
-    "compile": "tsc",
     "fix": "gts fix src/**/*.ts && gts fix test/**/*.ts",
+    "precompile": "rimraf lib",
+    "compile": "tsc",
+    "compile:dev": "tsc -p tsconfig.dev.json",
     "prepare": "npm run compile",
     "posttest": "npm run check"
   },
@@ -24,13 +28,19 @@
   ],
   "dependencies": {},
   "devDependencies": {
+    "@ava/typescript": "^1.1.1",
     "@types/chai": "^4.2.11",
     "@types/node": "^10.17.19",
     "@types/sinon": "^7.5.2",
     "ava": "^3.7.0",
+    "carbon-now-cli": "^1.4.0",
     "chai": "^4.2.0",
+    "foreach-cli": "^1.8.1",
     "gts": "^2.0.0",
     "nyc": "^15.0.1",
+    "remark-cli": "^8.0.0",
+    "remark-preset-lint-recommended": "^4.0.0",
+    "rimraf": "^3.0.2",
     "sinon": "^9.0.2",
     "ts-node": "^8.8.2",
     "typescript": "^3.8.3"
@@ -40,16 +50,19 @@
     "files": [
       "./test/**/*.test.ts"
     ],
-    "extensions": [
-      "ts"
-    ],
-    "require": [
-      "ts-node/register"
-    ]
+    "typescript": {
+      "rewritePaths": {
+        "test/": "lib/test/",
+        "src/": "lib/src/"
+      }
+    }
   },
   "nyc": {
     "all": true,
-    "reporter": "lcov"
+    "reporter": "lcov",
+    "include": [
+      "src/**/*.ts"
+    ]
   },
   "remarkConfig": {
     "plugins": [

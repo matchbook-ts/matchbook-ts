@@ -1,36 +1,51 @@
 <img src="./assets/logo.png" width=500 alt="Project Logo" />
 
-# matchbook
-[![npm version][npm_ver_badge]][npm_link] [![codacy][codacy_badge]][codacy_link] [![source rank][source_rank_badge]][libraries_io] ![license][license_badge]
-## Pattern Matching in TypeScript & JavaScript
-### ❗ Notice ❗
-#### This project is in active development! 🚧🏗👷‍♂️
-Watch the repository for releases to get notified when version 1 is released!
+# `@matchbook/ts`
+## pattern matching in TypeScript & JavaScript
+
+`@matchbook/ts` is a lightweight & simple pattern matching library,
+for TypeScript and JavaScript.
+
+To start using matchbook, install it like any other npm package:
+
+`npm i @matchbook/ts`
 
 ---
 
-#### Matchbook Goals
--   simple & powerful API
-    -   API is just **5 functions**, and some aliases
-    -   Well documented (TODO: typedoc)
-    -   **Powerful type inference** backed by ![top lang][lang_badge]
+[![npm version][npm_ver_badge]][npm_link]
+[![pkg size][npm_size_badge]][npm_link]
+[![build][build_badge]][build_link]
+[![source rank][source_rank_badge]][libraries_io]
 
--   costs almost nothing to use
-    -   **_zero_** runtime dependencies
-    -   [![pkg size][npm_size_badge]][npm_link]
+![top lang][lang_badge]
+[![codacy][codacy_badge]][codacy_link]
+[![codecov][codecov_badge]][codecov_link]
+![license][license_badge]
 
--   reliable
-    -   comprehensive automated tests backed by [![ava][ava_dep_badge]][ava_npm]
-    -   100% code coverage [![codecov][codecov_badge]][codecov_link]
-    -   All pull requests & commits to `master` built via Travis CI [![build][build_badge]][build_link]
+![it's as easy as a-b-c 1-2-3](assets/readme_samples/static/abc_123.snippet.png)
 
----
+## table of contents
 
-<img src="./assets/readme_samples/abc_123.png" width="500" alt="It's as easy as A-B-C 1-2-3"/>
+-   [library goals](#library-goals)
 
----
+-   [pattern matching explained](#pattern-matching-explained)
 
-### Pattern Matching Explained
+-   [matchbook at a glance](#matchbook-at-a-glance)
+
+-   [matchbook at a slightly longer glance (examples)](#matchbook-at-a-slightly-longer-glance)
+    -   [switching on an `enum`](#switching-on-an-enum)
+    -   [acting on the type of an Event](#acting-on-the-type-of-an-event)
+    -   [matching if a value is an `instanceof` a constructor](#matching-if-a-value-is-an-instanceof-a-constructor)
+
+## library goals
+
+-   **simple** - API is just **5** functions, along with some aliases
+-   **powerful** - type inference backed by Typescript
+-   **well documented** - (TODO: typedoc)
+-   **low cost** - no runtime dependencies, small package size
+-   **reliable** - 100% unit test coverage, all pushes verified via Travis CI 
+
+## pattern matching explained
 Pattern matching is a  modern language feature
 that acts like a `switch` / `case` statement
 on steroids 💊💪.
@@ -43,7 +58,19 @@ and want to handle the different cases in a
 This project takes heavy inspiration from
 [Rust's pattern matching idiom][rust_match].
 
-### Examples
+## matchbook at a glance
+![matchbook at a glance](assets/readme_samples/static/10-000-feet.snippet.png)
+
+## matchbook at a slightly longer glance
+
+### switching on an `enum`
+![enum example](assets/readme_samples/static/enum.snippet.png)
+
+### acting on the type of an Event
+![enum example](assets/readme_samples/static/type_guard.snippet.png)
+
+### matching if a value is an `instanceof` a constructor
+![enum example](assets/readme_samples/static/ctor.snippet.png)
 
 [rust_match]: https://doc.rust-lang.org/book/ch06-02-match.html
 [codecov_link]: https://codecov.io/gh/matchbook-ts/matchbook-ts
@@ -57,7 +84,5 @@ This project takes heavy inspiration from
 [license_badge]: https://img.shields.io/github/license/matchbook-ts/matchbook-ts
 [source_rank_badge]: https://img.shields.io/librariesio/sourcerank/npm/@matchbook/ts
 [libraries_io]: https://libraries.io/npm/@matchbook%2Fts
-[ava_dep_badge]: https://img.shields.io/github/package-json/dependency-version/matchbook-ts/matchbook-ts/dev/ava
-[ava_npm]: https://www.npmjs.com/package/ava
 [codacy_badge]: https://api.codacy.com/project/badge/Grade/dd3aa51feb4b4b9988d2a1c9ea543187
 [codacy_link]: https://www.codacy.com/gh/matchbook-ts/matchbook-ts?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=matchbook-ts/matchbook-ts&amp;utm_campaign=Badge_Grade
