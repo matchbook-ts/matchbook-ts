@@ -60,8 +60,8 @@
   "nyc": {
     "all": true,
     "reporter": "lcov",
-    "exclude": [
-      "./assets/**/*"
+    "include": [
+      "src/**/*.ts"
     ]
   },
   "remarkConfig": {
