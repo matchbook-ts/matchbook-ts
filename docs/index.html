@@ -1,0 +1,200 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>@matchbook/ts</title>
+	<meta name="description" content="Documentation for @matchbook/ts">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="assets/js/search.json" data-base=".">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="index.html" class="title">@matchbook/ts</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+							<input type="checkbox" id="tsd-filter-only-exported" />
+							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="globals.html">Globals</a>
+				</li>
+			</ul>
+			<h1>@matchbook/ts</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<div class="tsd-panel tsd-typography">
+				<img src="./assets/logo.png" width=500 alt="Project Logo" />
+				<a href="#matchbookts" id="matchbookts" style="color: inherit; text-decoration: none;">
+					<h1><code>@matchbook/ts</code></h1>
+				</a>
+				<a href="#pattern-matching-in-typescript-amp-javascript" id="pattern-matching-in-typescript-amp-javascript" style="color: inherit; text-decoration: none;">
+					<h2>pattern matching in TypeScript &amp; JavaScript</h2>
+				</a>
+				<p><code>@matchbook/ts</code> is a lightweight &amp; simple pattern matching library,
+				for TypeScript and JavaScript.</p>
+				<p>To start using matchbook, install it like any other npm package:</p>
+				<p><code>npm i @matchbook/ts</code></p>
+				<hr>
+				<p><a href="https://www.npmjs.com/package/@matchbook/ts"><img src="https://img.shields.io/npm/v/@matchbook/ts" alt="npm version"></a>
+					<a href="https://www.npmjs.com/package/@matchbook/ts"><img src="https://img.shields.io/bundlephobia/min/@matchbook/ts" alt="pkg size"></a>
+					<a href="https://travis-ci.org/matchbook-ts/matchbook-ts"><img src="https://travis-ci.org/matchbook-ts/matchbook-ts.svg?branch=master" alt="build"></a>
+				<a href="https://libraries.io/npm/@matchbook%2Fts"><img src="https://img.shields.io/librariesio/sourcerank/npm/@matchbook/ts" alt="source rank"></a></p>
+				<p><img src="https://img.shields.io/github/languages/top/matchbook-ts/matchbook-ts" alt="top lang">
+					<a href="https://www.codacy.com/gh/matchbook-ts/matchbook-ts?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=matchbook-ts/matchbook-ts&amp;utm_campaign=Badge_Grade"><img src="https://api.codacy.com/project/badge/Grade/dd3aa51feb4b4b9988d2a1c9ea543187" alt="codacy"></a>
+					<a href="https://codecov.io/gh/matchbook-ts/matchbook-ts"><img src="https://codecov.io/gh/matchbook-ts/matchbook-ts/branch/master/graph/badge.svg" alt="codecov"></a>
+				<img src="https://img.shields.io/github/license/matchbook-ts/matchbook-ts" alt="license"></p>
+				<p><img src="assets/readme-samples/static/abc_123.snippet.png" alt="it&#39;s as easy as a-b-c 1-2-3"></p>
+				<a href="#table-of-contents" id="table-of-contents" style="color: inherit; text-decoration: none;">
+					<h2>table of contents</h2>
+				</a>
+				<ul>
+					<li><p><a href="#library-goals">library goals</a></p>
+					</li>
+					<li><p><a href="#pattern-matching-explained">pattern matching explained</a></p>
+					</li>
+					<li><p><a href="#matchbook-at-a-glance">matchbook at a glance</a></p>
+					</li>
+					<li><p><a href="#matchbook-at-a-slightly-longer-glance">matchbook at a slightly longer glance (examples)</a></p>
+						<ul>
+							<li><a href="#switching-on-an-enum">switching on an <code>enum</code></a></li>
+							<li><a href="#acting-on-the-type-of-an-event">acting on the type of an Event</a></li>
+							<li><a href="#matching-if-a-value-is-an-instanceof-a-constructor">matching if a value is an <code>instanceof</code> a constructor</a></li>
+						</ul>
+					</li>
+				</ul>
+				<a href="#library-goals" id="library-goals" style="color: inherit; text-decoration: none;">
+					<h2>library goals</h2>
+				</a>
+				<ul>
+					<li><strong>simple</strong> - API is just <strong>5</strong> functions, along with some aliases</li>
+					<li><strong>powerful</strong> - type inference backed by Typescript</li>
+					<li><strong>well documented</strong> - (TODO: typedoc)</li>
+					<li><strong>low cost</strong> - no runtime dependencies, small package size</li>
+					<li><strong>reliable</strong> - 100% unit test coverage, all pushes verified via Travis CI </li>
+				</ul>
+				<a href="#pattern-matching-explained" id="pattern-matching-explained" style="color: inherit; text-decoration: none;">
+					<h2>pattern matching explained</h2>
+				</a>
+				<p>Pattern matching is a  modern language feature
+					that acts like a <code>switch</code> / <code>case</code> statement
+				on steroids 💊💪.</p>
+				<p>You might consider using pattern matching if you
+					need to switch on Types or states frequently,
+					and want to handle the different cases in a
+				<strong>concise</strong> and <strong>expressive</strong> way.</p>
+				<p>This project takes heavy inspiration from
+				<a href="https://doc.rust-lang.org/book/ch06-02-match.html">Rust&#39;s pattern matching idiom</a>.</p>
+				<a href="#matchbook-at-a-glance" id="matchbook-at-a-glance" style="color: inherit; text-decoration: none;">
+					<h2>matchbook at a glance</h2>
+				</a>
+				<p><img src="assets/readme-samples/static/10-000-feet.snippet.png" alt="matchbook at a glance"></p>
+				<a href="#matchbook-at-a-slightly-longer-glance" id="matchbook-at-a-slightly-longer-glance" style="color: inherit; text-decoration: none;">
+					<h2>matchbook at a slightly longer glance</h2>
+				</a>
+				<a href="#switching-on-an-enum" id="switching-on-an-enum" style="color: inherit; text-decoration: none;">
+					<h3>switching on an <code>enum</code></h3>
+				</a>
+				<p><img src="assets/readme-samples/static/enum.snippet.png" alt="enum example"></p>
+				<a href="#acting-on-the-type-of-an-event" id="acting-on-the-type-of-an-event" style="color: inherit; text-decoration: none;">
+					<h3>acting on the type of an Event</h3>
+				</a>
+				<p><img src="assets/readme-samples/static/type_guard.snippet.png" alt="enum example"></p>
+				<a href="#matching-if-a-value-is-an-instanceof-a-constructor" id="matching-if-a-value-is-an-instanceof-a-constructor" style="color: inherit; text-decoration: none;">
+					<h3>matching if a value is an <code>instanceof</code> a constructor</h3>
+				</a>
+				<p><img src="assets/readme-samples/static/ctor.snippet.png" alt="enum example"></p>
+			</div>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class="globals  ">
+						<a href="globals.html"><em>Globals</em></a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_index_.html">&quot;index&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_public_match_.html">&quot;public/match&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_public_otherwise_.html">&quot;public/otherwise&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_public_pattern_.html">&quot;public/pattern&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_public_strike_.html">&quot;public/strike&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_public_unwrap_.html">&quot;public/unwrap&quot;</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
+				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="assets/js/main.js"></script>
+<script>if (location.protocol == 'file:') document.write('<script src="assets/js/search.js"><' + '/script>');</script>
+</body>
+</html>

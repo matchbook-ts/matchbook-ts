@@ -22,7 +22,7 @@ To start using matchbook, install it like any other npm package:
 [![codecov][codecov_badge]][codecov_link]
 ![license][license_badge]
 
-![it's as easy as a-b-c 1-2-3](assets/readme_samples/static/abc_123.snippet.png)
+![it's as easy as a-b-c 1-2-3](assets/readme-samples/static/abc_123.snippet.png)
 
 ## table of contents
 
@@ -59,18 +59,18 @@ This project takes heavy inspiration from
 [Rust's pattern matching idiom][rust_match].
 
 ## matchbook at a glance
-![matchbook at a glance](assets/readme_samples/static/10-000-feet.snippet.png)
+![matchbook at a glance](assets/readme-samples/static/10-000-feet.snippet.png)
 
 ## matchbook at a slightly longer glance
 
 ### switching on an `enum`
-![enum example](assets/readme_samples/static/enum.snippet.png)
+![enum example](assets/readme-samples/static/enum.snippet.png)
 
 ### acting on the type of an Event
-![enum example](assets/readme_samples/static/type_guard.snippet.png)
+![enum example](assets/readme-samples/static/type_guard.snippet.png)
 
 ### matching if a value is an `instanceof` a constructor
-![enum example](assets/readme_samples/static/ctor.snippet.png)
+![enum example](assets/readme-samples/static/ctor.snippet.png)
 
 [rust_match]: https://doc.rust-lang.org/book/ch06-02-match.html
 [codecov_link]: https://codecov.io/gh/matchbook-ts/matchbook-ts
