@@ -3,10 +3,7 @@ import test from 'ava';
 import {fake} from 'sinon';
 import {Fn} from '../../../src/internal/common/types';
 import {matchCtorTester} from '../../../src/internal/match-testing';
-import {
-    trackMatched,
-    trackUnmatched,
-} from '../../../src/internal/match-tracking';
+import {trackMatched, trackUnmatched} from '../../../src/internal/match-tracking';
 
 class CoinBook {}
 
@@ -24,8 +21,7 @@ test('`matchCtorTester` should match, when input is an instance of a constructor
 test('`matchCtorTester` should not match, when input is not an instance of a constructor', t => {
     // arrange
     const input = trackUnmatched({coins: []});
-    const transform = () =>
-        t.fail('match invoked transform function when value was not a match');
+    const transform = () => t.fail('match invoked transform function when value was not a match');
 
     // act
     const actual = matchCtorTester(input, CoinBook, transform);
@@ -46,9 +42,7 @@ test('`matchCtorTester` should never invoke constructor, when input unmatched', 
     }
 
     // act
-    matchCtorTester(input, CoinBookFake, () =>
-        t.fail('transformer was invoked')
-    );
+    matchCtorTester(input, CoinBookFake, () => t.fail('transformer was invoked'));
 
     // assert
     t.is(constructCount, 0);
@@ -58,9 +52,7 @@ test('`matchCtorTester` should never invoke constructor, when input matched', t 
     const input = trackMatched('fart');
     const del = fake(() => true);
     const onMatch: Fn<() => string> = () =>
-        (t.fail(
-            'match invoked transform function when value was not a match'
-        ) as unknown) as string;
+        (t.fail('match invoked transform function when value was not a match') as unknown) as string;
 
     // act
     matchCtorTester(input, del, onMatch);

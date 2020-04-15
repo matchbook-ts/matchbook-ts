@@ -7,9 +7,5 @@ import {TrackedEither} from '../../match-tracking/types';
  * @internal
  */
 export type MatchTester = Fn<
-    <T, R>(
-        input: TrackedEither<T, R>,
-        when: unknown,
-        mapOrVal: MapFnOrValue<T, R>
-    ) => TrackedEither<T, R>
+    <T, R>(input: TrackedEither<T, R>, when: unknown, mapOrVal: MapFnOrValue<T, R>) => TrackedEither<T, R>
 >;

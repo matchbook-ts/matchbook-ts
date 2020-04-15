@@ -12,14 +12,9 @@ import {Fn, MapFnOrValue} from '../common';
  * @param tracker
  * @param mapOrVal
  */
-export function mapUnmatched<TIn, TOut>(
-    tracker: Unmatched<TIn>,
-    mapOrVal: MapFnOrValue<TIn, TOut>
-): Matched<TOut> {
+export function mapUnmatched<TIn, TOut>(tracker: Unmatched<TIn>, mapOrVal: MapFnOrValue<TIn, TOut>): Matched<TOut> {
     const map: Fn<(_: TIn) => TOut> =
-        typeof mapOrVal !== 'function'
-            ? () => mapOrVal
-            : (mapOrVal as Fn<(_: TIn) => TOut>);
+        typeof mapOrVal !== 'function' ? () => mapOrVal : (mapOrVal as Fn<(_: TIn) => TOut>);
 
     const out: TOut = map(tracker.val);
 

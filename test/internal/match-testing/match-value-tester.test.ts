@@ -23,8 +23,7 @@ test('`matchValueTester` should match, when input deep equals value', t => {
 test('`matchValueTester` should not match, when input does not deep equal constant value', t => {
     // arrange
     const input = trackUnmatched(Coin.Quarter);
-    const transform = () =>
-        t.fail('match invoked transform function when value was not a match');
+    const transform = () => t.fail('match invoked transform function when value was not a match');
 
     // act
     const actual = matchValueTester(input, Coin.Nickel, transform);

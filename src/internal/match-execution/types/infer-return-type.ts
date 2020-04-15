@@ -12,14 +12,8 @@ import {UnwrapExecutor} from './unwrap-executor';
  *
  * @internal
  */
-export type InferReturnTypeOfExecutors<TExecs> = TExecs extends Array<
-    MatchExecutor<infer TIn, infer TOut>
->
+export type InferReturnTypeOfExecutors<TExecs> = TExecs extends Array<MatchExecutor<infer TIn, infer TOut>>
     ? TIn | TOut
-    : TExecs extends Array<
-          | UnwrapExecutor
-          | DefaultExecutor<any, infer TOut>
-          | MatchExecutor<any, infer TOut>
-      >
+    : TExecs extends Array<UnwrapExecutor | DefaultExecutor<any, infer TOut> | MatchExecutor<any, infer TOut>>
     ? TOut
     : Problem<TExecs, 'Cannot infer type of Matchers from arguments'>;

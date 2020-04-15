@@ -27,12 +27,9 @@ import {isUnmatched, TrackedEither} from '../internal/match-tracking';
  * }
  * ```
  */
-export const unwrap: UnwrapExecutor = <TIn, TOut>(
-    t: TrackedEither<TIn, TOut>
-) => (isUnmatched(t) ? throwUnwrapError() : t);
+export const unwrap: UnwrapExecutor = <TIn, TOut>(t: TrackedEither<TIn, TOut>) =>
+    isUnmatched(t) ? throwUnwrapError() : t;
 
 function throwUnwrapError(): never {
-    throw new Error(
-        'matchbook: `unwrap` was invoked, but value did not satisfy any `match` arms.'
-    );
+    throw new Error('matchbook: `unwrap` was invoked, but value did not satisfy any `match` arms.');
 }

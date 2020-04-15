@@ -2,14 +2,7 @@
 import test from 'ava';
 import {match, unwrap, pattern} from '../../../src';
 import {Fn} from '../../../src/internal/common/types';
-import {
-    Event,
-    EventType,
-    isMessage,
-    isReaction,
-    MessageEvent,
-    ReactionEvent,
-} from './types';
+import {Event, EventType, isMessage, isReaction, MessageEvent, ReactionEvent} from './types';
 
 // e2e test using `pattern`, Type Guard matching, and `unwrap`
 
