@@ -71,9 +71,14 @@
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
 						<section class="tsd-index-section ">
+							<h3>Classes</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-class tsd-parent-kind-module"><a href="../classes/_public_unwrap_.unwraperror.html" class="tsd-kind-icon">Unwrap<wbr>Error</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
 							<h3>Functions</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="_public_unwrap_.html#throwunwraperror" class="tsd-kind-icon">throw<wbr>Unwrap<wbr>Error</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter"><a href="_public_unwrap_.html#unwrap" class="tsd-kind-icon">unwrap</a></li>
 							</ul>
 						</section>
@@ -82,23 +87,6 @@
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Functions</h2>
-				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
-					<a name="throwunwraperror" class="tsd-anchor"></a>
-					<h3>throw<wbr>Unwrap<wbr>Error</h3>
-					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
-						<li class="tsd-signature tsd-kind-icon">throw<wbr>Unwrap<wbr>Error<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">never</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/matchbook-ts/matchbook-ts/blob/1b27ae8/src/public/unwrap.ts#L34">public/unwrap.ts:34</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">never</span></h4>
-						</li>
-					</ul>
-				</section>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter">
 					<a name="unwrap" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagConst">Const</span> unwrap</h3>
@@ -109,7 +97,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/matchbook-ts/matchbook-ts/blob/1b27ae8/src/public/unwrap.ts#L30">public/unwrap.ts:30</a></li>
+									<li>Defined in <a href="https://github.com/matchbook-ts/matchbook-ts/blob/a0ce072/src/public/unwrap.ts#L35">src/public/unwrap.ts:35</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -118,6 +106,9 @@
 									<dd><p>This throws if the match was not exhaustive,
 										and returns R if it matched.</p>
 										<p>I sure hope you know what you are doing!</p>
+									</dd>
+									<dt>throws</dt>
+									<dd><p><a href="../classes/_public_unwrap_.unwraperror.html">UnwrapError</a></p>
 										<pre><code class="language-typescript"><span class="hljs-keyword">enum</span> Time {
     Morning = <span class="hljs-string">'Morning'</span>,
     Noon = <span class="hljs-string">'Noon'</span>,
@@ -131,9 +122,13 @@
     <span class="hljs-comment">// This will throw!!</span>
     getMessage(<span class="hljs-string">'blarg!'</span>);
 } <span class="hljs-keyword">catch</span> (e) {
-    <span class="hljs-comment">// logs: "Unwrapped pattern didn't satisfy any matchers."</span>
-    <span class="hljs-built_in">console</span>.error(e.message);
+    <span class="hljs-keyword">if</span> (e <span class="hljs-keyword">instanceof</span> UnwrapError) {
+        <span class="hljs-built_in">console</span>.error(e.message);
+    }
 }</code></pre>
+									</dd>
+									<dt>since</dt>
+									<dd><p>1.0.0</p>
 									</dd>
 								</dl>
 							</div>
@@ -194,8 +189,8 @@
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
-						<a href="_public_unwrap_.html#throwunwraperror" class="tsd-kind-icon">throw<wbr>Unwrap<wbr>Error</a>
+					<li class=" tsd-kind-class tsd-parent-kind-module">
+						<a href="../classes/_public_unwrap_.unwraperror.html" class="tsd-kind-icon">Unwrap<wbr>Error</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter">
 						<a href="_public_unwrap_.html#unwrap" class="tsd-kind-icon">unwrap</a>
@@ -212,6 +207,9 @@
 			<ul class="tsd-legend">
 				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
 				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
 			</ul>
 		</div>
 	</div>
