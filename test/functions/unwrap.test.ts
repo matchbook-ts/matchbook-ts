@@ -1,6 +1,6 @@
 /* eslint-disable node/no-unpublished-import */
 import test from 'ava';
-import {unwrap} from '../../src';
+import {UnwrapError, unwrap} from '../../src';
 import {trackMatched, trackUnmatched} from '../../src/internal/match-tracking';
 
 test('`unwrap` should throw, when input unmatched', t => {
@@ -11,7 +11,7 @@ test('`unwrap` should throw, when input unmatched', t => {
     const closure = () => unwrap(input);
 
     // assert
-    t.throws(closure);
+    t.throws(closure, {instanceOf: UnwrapError});
 });
 
 test('`unwrap` should not throw, when input matched', t => {
@@ -23,4 +23,11 @@ test('`unwrap` should not throw, when input matched', t => {
 
     // assert
     t.notThrows(closure);
+});
+
+test('`UnwrapError` should construct', t => {
+    // arrange
+    // act
+    // assert
+    t.notThrows(() => new UnwrapError());
 });
