@@ -35,6 +35,7 @@ import {isUnmatched, TrackedEither} from '../internal/match-tracking';
 export const unwrap: UnwrapExecutor = <TIn, TOut>(t: TrackedEither<TIn, TOut>) =>
     isUnmatched(t) ? throwUnwrapError() : t;
 
+/** @internal */
 function throwUnwrapError(): never {
     throw new UnwrapError();
 }
