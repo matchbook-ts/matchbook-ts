@@ -15,5 +15,5 @@ const getSaying: Fn<(h: Human) => string> = pattern(
 
 assert(getSaying(new Spiderman()) === 'thwipp!');
 
-// this throws an `UnmatchedValueWasUnwrappedError`!
+// this throws an `UnwrapError`!
 getSaying(new Teacher());
