@@ -8,6 +8,8 @@ import {isUnmatched, TrackedEither} from '../internal/match-tracking';
  *
  * I sure hope you know what you are doing!
  *
+ * @throws {@link UnwrapError}
+ *
  * ```typescript
  * enum Time {
  *     Morning = 'Morning',
@@ -22,17 +24,30 @@ import {isUnmatched, TrackedEither} from '../internal/match-tracking';
  *     // This will throw!!
  *     getMessage('blarg!');
  * } catch (e) {
- *     // logs: "Unwrapped pattern didn't satisfy any matchers."
- *     console.error(e.message);
+ *     if (e instanceof UnwrapError) {
+ *         console.error(e.message);
+ *     }
  * }
  * ```
+ *
+ * @since 1.0.0
  */
-export const unwrap: UnwrapExecutor = <TIn, TOut>(
-    t: TrackedEither<TIn, TOut>
-) => (isUnmatched(t) ? throwUnwrapError() : t);
+export const unwrap: UnwrapExecutor = <TIn, TOut>(t: TrackedEither<TIn, TOut>) =>
+    isUnmatched(t) ? throwUnwrapError() : t;
 
 function throwUnwrapError(): never {
-    throw new Error(
-        'matchbook: `unwrap` was invoked, but value did not satisfy any `match` arms.'
-    );
+    throw new UnwrapError();
+}
+
+/**
+ * @description
+ * Error type thrown by {@link unwrap} when a value hits `unwrap` and it has
+ * not been matched on yet.
+ *
+ * @since 1.0.0
+ */
+export class UnwrapError extends Error {
+    constructor() {
+        super('@matchbook: `unwrap` was invoked, but value did not satisfy any `match` arms.');
+    }
 }

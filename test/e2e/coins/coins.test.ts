@@ -6,11 +6,7 @@ import {Coin, CoinCondition, CoinRarity, CoinType} from './types';
 // e2e test using `strike`, constant value matching, and `otherwise`
 
 function appraiseCoin(coin: Coin) {
-    const conditionFactor = strike(
-        coin.condish,
-        m(CoinCondition.Mint, 5),
-        rest(1)
-    );
+    const conditionFactor = strike(coin.condish, m(CoinCondition.Mint, 5), rest(1));
     const yearFactor = 2020 - coin.year;
     const rarityFactor = strike(
         coin.rarity,
@@ -28,11 +24,7 @@ function appraiseCoin(coin: Coin) {
         m(CoinType.Penny, 0.01)
     );
 
-    return (
-        baseValue * rarityFactor +
-        baseValue * yearFactor +
-        baseValue * conditionFactor
-    );
+    return baseValue * rarityFactor + baseValue * yearFactor + baseValue * conditionFactor;
 }
 
 test('e2e(coins): appraiseCoin should properly appraise old ass quarter', t => {

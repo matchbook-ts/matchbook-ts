@@ -8,8 +8,8 @@ import {MatchExecutor} from './match-executor';
  *
  * @internal
  */
-export type InferInputTypeOfExecutors<
-    TExecs extends unknown[]
-> = TExecs extends Array<MatchExecutor<infer TIn> | DefaultExecutor<infer TIn>>
+export type InferInputTypeOfExecutors<TExecs extends unknown[]> = TExecs extends Array<
+    MatchExecutor<infer TIn> | DefaultExecutor<infer TIn>
+>
     ? TIn
     : Problem<TExecs, 'Matchers Invalid'>;

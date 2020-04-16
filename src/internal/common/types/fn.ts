@@ -18,6 +18,4 @@
  * );
  * ```
  */
-export type Fn<
-    TFn extends (...args: any[]) => unknown = (...args: any[]) => unknown
-> = TFn;
+export type Fn<TFn extends (...args: any[]) => unknown = (...args: any[]) => unknown> = TFn;

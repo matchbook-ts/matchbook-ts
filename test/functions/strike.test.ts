@@ -1,11 +1,7 @@
 /* eslint-disable node/no-unpublished-import */
 import test from 'ava';
 import {strike} from '../../src';
-import {
-    Matched,
-    trackMatched,
-    trackUnmatched,
-} from '../../src/internal/match-tracking';
+import {Matched, trackMatched, trackUnmatched} from '../../src/internal/match-tracking';
 
 test('`strike` should return matcher output, when input matches', t => {
     // arrange
