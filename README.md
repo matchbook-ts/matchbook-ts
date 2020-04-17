@@ -1,6 +1,6 @@
 <img src="./assets/logo.png" width=500 alt="Project Logo" />
 
-# 🔥🧨 matchbook
+# 🔥 matchbook
 ## pattern matching in typescript & javascript made easy
 
 matchbook is a lightweight & easy to use pattern matching library,
@@ -67,22 +67,21 @@ and the v1.0.0 release!
 
 **ask questions!**
 
-If you have any questions, find any gaps in the docs, or just want to shoot the
-shirt, [open an issue][new_issue] of type `question`, and we'll do our best to
-answer!
+If you have any questions, any feedback, or just want to shoot the shirt,
+[open an issue][new_issue] of type `question`, and we'll do our best to answer quickly!
 
 ## pattern matching explained
-Pattern matching is a  modern language feature
-that acts like a `switch` / `case` statement
-on steroids 💊💪.
+Pattern matching is a  modern language feature that is similar to a `switch` / `case` statement.
 
-You might consider using pattern matching if you
-need to switch on Types or states frequently,
-and want to handle the different cases in a 
-**concise** and **expressive** way.
+With pattern matching, you can switch on the _type_ of the incoming value,
+meaning you can reduce a lot of extra-verbose if-else branches just by
+replacing them with pattern matching statements.
 
-This project takes heavy inspiration from
-[Rust's pattern matching idiom][rust_match].
+You might consider using pattern matching if you find you're switching on types
+or states frequently, and want to handle the different cases in a 
+concise and expressive way.
+
+This project takes heavy inspiration from [Rust's pattern matching idiom][rust_match].
 
 ## matchbook at a glance
 want to know more? [read the docs][api_docs]!
