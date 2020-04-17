@@ -1,4 +1,4 @@
-<img src="./assets/logo.png" width=500 alt="Project Logo" />
+![logo](assets/banner.png)
 
 # `@matchbook/ts`
 ## pattern matching in TypeScript & JavaScript
