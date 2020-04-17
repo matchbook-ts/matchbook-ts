@@ -64,18 +64,19 @@
 	<div class="row">
 		<div class="col-8 col-content">
 			<div class="tsd-panel tsd-typography">
-				<img src="./assets/logo.png" width=500 alt="Project Logo" />
-				<a href="#matchbookts" id="matchbookts" style="color: inherit; text-decoration: none;">
-					<h1><code>@matchbook/ts</code></h1>
+				<p><img src="assets/banner.png" alt="logo"></p>
+				<a href="#🔥-matchbook" id="🔥-matchbook" style="color: inherit; text-decoration: none;">
+					<h1>🔥 matchbook</h1>
 				</a>
-				<a href="#pattern-matching-in-typescript-amp-javascript" id="pattern-matching-in-typescript-amp-javascript" style="color: inherit; text-decoration: none;">
-					<h2>pattern matching in TypeScript &amp; JavaScript</h2>
+				<a href="#pattern-matching-in-typescript-amp-javascript-made-easy" id="pattern-matching-in-typescript-amp-javascript-made-easy" style="color: inherit; text-decoration: none;">
+					<h2>pattern matching in typescript &amp; javascript made easy</h2>
 				</a>
-				<p><code>@matchbook/ts</code> is a lightweight &amp; simple pattern matching library,
+				<p>matchbook is a lightweight &amp; easy to use pattern matching library,
 				for TypeScript and JavaScript.</p>
-				<p>To start using matchbook, install it like any other npm package:</p>
+				<p>If you want to know more about matchbook,
+				<a href="https://matchbook-ts.github.io/matchbook-ts/docs/">check out the docs</a> or <a href="#table-of-contents">read on</a>!</p>
+				<p>If you want to start using matchbook, install it like any other npm package:</p>
 				<p><code>npm i @matchbook/ts</code></p>
-				<p>If you want to know more about matchbook, keep reading this or <a href="https://matchbook-ts.github.io/matchbook-ts/docs/">check out the docs</a>!</p>
 				<hr>
 				<p><a href="https://www.npmjs.com/package/@matchbook/ts"><img src="https://img.shields.io/npm/v/@matchbook/ts" alt="npm version"></a>
 					<a href="https://www.npmjs.com/package/@matchbook/ts"><img src="https://img.shields.io/bundlephobia/min/@matchbook/ts" alt="pkg size"></a>
@@ -90,7 +91,9 @@
 					<h2>table of contents</h2>
 				</a>
 				<ul>
-					<li><p><a href="#library-goals">library goals</a></p>
+					<li><p><a href="#what-matchbook-does-for-you">what matchbook does for you</a></p>
+					</li>
+					<li><p><a href="#what-you-can-do-for-matchbook">what you can do for matchbook</a></p>
 					</li>
 					<li><p><a href="#pattern-matching-explained">pattern matching explained</a></p>
 					</li>
@@ -104,28 +107,48 @@
 						</ul>
 					</li>
 				</ul>
-				<a href="#library-goals" id="library-goals" style="color: inherit; text-decoration: none;">
-					<h2>library goals</h2>
+				<a href="#what-matchbook-does-for-you" id="what-matchbook-does-for-you" style="color: inherit; text-decoration: none;">
+					<h2>what matchbook does for you</h2>
 				</a>
+				<p><em>(list is in no particular order)</em></p>
 				<ul>
-					<li><strong>simple</strong> - API is just <strong>5</strong> functions, along with some aliases</li>
+					<li><strong>expressive</strong> - pattern matching helps you write <strong>less code</strong> that&#39;s <strong>more expressive</strong> than if/else trees</li>
+					<li><strong>simple</strong> - API is just 5 functions, 1 error class, and some stylistic aliases for the core functions</li>
 					<li><strong>powerful</strong> - type inference backed by Typescript</li>
 					<li><strong>well documented</strong> - <a href="https://matchbook-ts.github.io/matchbook-ts/docs/">check out the docs here!</a></li>
-					<li><strong>low cost</strong> - no runtime dependencies, small package size</li>
-					<li><strong>reliable</strong> - 100% unit test coverage, all pushes verified via Travis CI </li>
+					<li><strong>low cost</strong> - no runtime dependencies, &amp; small package size</li>
+					<li><strong>reliable</strong> - 100% unit test coverage, with all pushes verified via Travis CI </li>
 				</ul>
+				<a href="#what-you-can-do-for-matchbook" id="what-you-can-do-for-matchbook" style="color: inherit; text-decoration: none;">
+					<h2>what you can do for matchbook</h2>
+				</a>
+				<a href="#use-it" id="use-it" style="color: inherit; text-decoration: none;">
+					<h3>use it!</h3>
+				</a>
+				<p>The project is currently in <code>beta</code>, meaning the functionality &amp; API are complete &amp;
+					fully covered by tests, but the library hasn&#39;t been battle-tested and may need
+				some final tweaks before v1.0.0.</p>
+				<a href="#watch-it" id="watch-it" style="color: inherit; text-decoration: none;">
+					<h3>watch it!</h3>
+				</a>
+				<p>Watch the project for releases to be notified of cool new features,
+				and the v1.0.0 release!</p>
+				<a href="#ask-questions" id="ask-questions" style="color: inherit; text-decoration: none;">
+					<h3>ask questions!</h3>
+				</a>
+				<p>If you have any questions, any feedback, or just want to shoot the shirt,
+				<a href="https://github.com/matchbook-ts/matchbook-ts/issues/new">open an issue</a> of type <code>question</code>, and we&#39;ll do our best to answer quickly!</p>
 				<a href="#pattern-matching-explained" id="pattern-matching-explained" style="color: inherit; text-decoration: none;">
 					<h2>pattern matching explained</h2>
 				</a>
-				<p>Pattern matching is a  modern language feature
-					that acts like a <code>switch</code> / <code>case</code> statement
-				on steroids 💊💪.</p>
-				<p>You might consider using pattern matching if you
-					need to switch on Types or states frequently,
-					and want to handle the different cases in a
-				<strong>concise</strong> and <strong>expressive</strong> way.</p>
-				<p>This project takes heavy inspiration from
-				<a href="https://doc.rust-lang.org/book/ch06-02-match.html">Rust&#39;s pattern matching idiom</a>.</p>
+				<p>Pattern matching is a  modern language feature that is similar to a <code>switch</code> / <code>case</code> statement.</p>
+				<p>With pattern matching, you can switch on the <em>type</em> of the incoming value,
+					meaning you can reduce a lot of extra-verbose if-else branches just by
+				replacing them with pattern matching statements.</p>
+				<p>You might consider using pattern matching if you find you&#39;re switching on types
+					or states frequently, and want to handle the different cases in a
+				concise and expressive way.</p>
+				<p>This project takes heavy inspiration from <a href="https://doc.rust-lang.org/book/ch06-02-match.html">Rust&#39;s pattern matching idiom</a>.</p>
 				<a href="#matchbook-at-a-glance" id="matchbook-at-a-glance" style="color: inherit; text-decoration: none;">
 					<h2>matchbook at a glance</h2>
 				</a>
