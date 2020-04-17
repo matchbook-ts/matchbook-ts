@@ -64,7 +64,7 @@ some final tweaks before v1.0.0.
 Watch the project for releases to be notified of cool new features,
 and the v1.0.0 release!
 
-**ask questions!**
+### ask questions!
 
 If you have any questions, any feedback, or just want to shoot the shirt,
 [open an issue][new_issue] of type `question`, and we'll do our best to answer quickly!
