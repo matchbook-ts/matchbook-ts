@@ -89,6 +89,9 @@ want to know more? [read the docs][api_docs]!
 ## matchbook at a slightly longer glance
 want to know more? [read the docs][api_docs]!
 
+### switching on part of an object
+![enum example](assets/readme-samples/static/structure.snippet.png)
+
 ### switching on an `enum`
 ![enum example](assets/readme-samples/static/enum.snippet.png)
 

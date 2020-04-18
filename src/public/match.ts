@@ -126,9 +126,35 @@ function match<TIn, TOut>(ifEquals: Fn<() => TIn>, then: MapFnOrValue<TIn, TOut>
  *
  * assertEq(actual, ':smiley:');
  * ```
- * ```
  */
 function match<TIn, TOut>(ifEquals: TIn, then: MapFnOrValue<typeof ifEquals, TOut>): MatchExecutor<TIn, TOut>;
+
+/**
+ * @description
+ * ## Match if `val` matches part of another
+ *
+ * ```typescript
+ * import { match, pattern, otherwise } from 'matchbook';
+ *
+ * const getGoodBirthdayGift = pattern(
+ *     match({ hobby: Hobby.Golf }, 'golf cart'),
+ *     match({ hobby: Hobby.Woodworking }, 'table saw'),
+ *     match({ hobby: Hobby.Blacksmithing }, 'tongs'),
+ *     otherwise('money')
+ * );
+ *
+ * const steve = {
+ *     name: 'Steve',
+ *     hobby: Hobby.Woodworking,
+ * };
+ *
+ * assertEq(getGoodBirthdayGift(steve), 'table saw');
+ * ```
+ */
+function match<TIn extends object, TOut>(
+    ifMatchesStructure: Partial<TIn>,
+    then: MapFnOrValue<TIn, TOut>
+): MatchExecutor<TIn, TOut>;
 
 function match<TIn, TOut, TInExt extends TIn = TIn>(
     when: Ctor<TInExt> | Fn<(_: TIn) => _ is TInExt> | Fn<(_: TIn) => boolean> | Fn<() => TIn> | TIn,
