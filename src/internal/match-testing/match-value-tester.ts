@@ -1,6 +1,6 @@
+import {Fn, MapFnOrValue} from '../common';
 import {mapUnmatched} from '../match-execution';
-import {TrackedEither, isUnmatched} from '../match-tracking';
-import {MapFnOrValue} from '../common';
+import {isMatched, TrackedEither} from '../match-tracking';
 import {MatchTester} from './types';
 
 /**
@@ -19,9 +19,20 @@ export const matchValueTester: MatchTester = <TIn, TOut>(
     rhs: unknown,
     mapOrVal: MapFnOrValue<TIn, TOut>
 ) => {
-    if (isUnmatched(tracker) && tracker.val === rhs) {
+    if (isMatched(tracker)) return tracker;
+
+    const isObject = (arg: unknown): arg is object => typeof arg === 'object' && arg !== null;
+
+    const structureMatches = (left: TIn, right: unknown): boolean =>
+        isObject(left) &&
+        isObject(right) &&
+        Object.entries(right).every(([k, v]) => k in left && left[k as keyof TIn] === v);
+
+    if (structureMatches(tracker.val, rhs)) {
         return mapUnmatched(tracker, mapOrVal);
     }
+
+    if (tracker.val === rhs) return mapUnmatched(tracker, mapOrVal);
 
     return tracker;
 };
