@@ -9,7 +9,7 @@
   "types": "./lib/src/index.d.ts",
   "main": "./lib/src/index.js",
   "scripts": {
-    "test": "npm run compile:dev && nyc ava -T 30000 && npm run check",
+    "test": "nyc ava -T 30000 && npm run check",
     "test:debug": "nyc ava debug --break --serial",
     "tdd": "nyc ava --watch",
     "docs:lint": "remark .",
@@ -18,7 +18,6 @@
     "check": "gts check src/**/*.ts && gts check test/**/*.ts",
     "fix": "gts fix src/**/*.ts && gts fix test/**/*.ts",
     "compile": "rimraf lib && tsc",
-    "compile:dev": "rimraf lib && tsc -p tsconfig.dev.json",
     "prepare": "npm run compile"
   },
   "files": [
