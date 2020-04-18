@@ -38,6 +38,7 @@ If you want to start using matchbook, install it like any other npm package:
 -   [matchbook at a glance](#matchbook-at-a-glance)
 
 -   [matchbook at a slightly longer glance (examples)](#matchbook-at-a-slightly-longer-glance)
+    -   [switching on part of an object](#switching-on-part-of-an-object)
     -   [switching on an `enum`](#switching-on-an-enum)
     -   [acting on the type of an Event](#acting-on-the-type-of-an-event)
     -   [matching if a value is an `instanceof` a constructor](#matching-if-a-value-is-an-instanceof-a-constructor)
