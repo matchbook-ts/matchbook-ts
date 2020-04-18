@@ -14,7 +14,7 @@ function isMessage(e: Event): e is MessageEvent {
     return e.type === EventType.Message;
 }
 
-const handleEvent: Fn<(e: Event) => string> = pattern(
+const handleEvent: (e: Event) => string = pattern(
     match(isMessage, 'you got a message!'),
     _('Event type not supported')
 );

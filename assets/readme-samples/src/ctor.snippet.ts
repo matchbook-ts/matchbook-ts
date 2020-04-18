@@ -6,7 +6,7 @@ class Spiderman extends Human { ... }
 class Formula1Driver extends Human { ... }
 class ConstructionWorker extends Human { ... }
 
-const getSaying: Fn<(h: Human) => string> = pattern(
+const getSaying: (h: Human) => string = pattern(
     match(Spiderman,          'thwipp!'),
     match(Formula1Driver,     'vrooommmm'),
     match(ConstructionWorker, '*whistle*'),

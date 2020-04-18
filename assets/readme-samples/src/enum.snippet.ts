@@ -6,7 +6,7 @@ enum Coin {
     Penny
 }
 
-const getValue: Fn<(c: Coin) => number> = pattern(
+const getValue: (c: Coin) => number = pattern(
     match(Coin.Penny,  0.01),
     match(Coin.Nickel, 0.05),
     match(Coin.Quarter, 0.25),
