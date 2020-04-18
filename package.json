@@ -13,7 +13,7 @@
     "test:debug": "nyc ava debug --break --serial",
     "tdd": "nyc ava --watch",
     "docs:lint": "remark .",
-    "docs:gen-screenshots": "rimraf assets/static/**/* && cd assets/readme-samples && foreach -g \"src/**/*.ts\" -x \"carbon-now #{path} -p matchbook --target static/#{name}\" --no-C",
+    "docs:gen-screenshots": "cd assets/readme-samples && node gen-screenshots.js",
     "docs:build": "rimraf docs && typedoc src/ --out docs && copyfiles assets/**/*.png docs",
     "check": "gts check src/**/*.ts && gts check test/**/*.ts",
     "fix": "gts fix src/**/*.ts && gts fix test/**/*.ts",
