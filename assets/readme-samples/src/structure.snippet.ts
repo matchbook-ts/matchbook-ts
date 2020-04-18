@@ -1,6 +1,6 @@
 import { match, pattern, otherwise } from '@matchbook/ts';
 
-type Person = {name: string, hobby: string};
+type Person = { name: string, hobby: string, };
 
 const steve: Person = {
     name: 'Steve',
@@ -13,8 +13,8 @@ const john: Person = {
 };
 
 const getBirthdayGift: (c: Person) => string = pattern(
-    match({hobby: 'Woodworking'}, 'Table saw'),
-    match({hobby: 'Metalworking'}, 'TIG welder'),
+    match({ hobby: 'Woodworking' }, 'Table saw'),
+    match({ hobby: 'Metalworking' }, 'TIG welder'),
     otherwise('Money'),
 );
 

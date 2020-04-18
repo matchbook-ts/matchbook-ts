@@ -1,4 +1,4 @@
-import {Fn, MapFnOrValue} from '../common';
+import {MapFnOrValue} from '../common';
 import {mapUnmatched} from '../match-execution';
 import {isMatched, TrackedEither} from '../match-tracking';
 import {MatchTester} from './types';

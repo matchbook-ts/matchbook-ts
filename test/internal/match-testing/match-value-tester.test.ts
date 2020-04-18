@@ -1,13 +1,25 @@
 /* eslint-disable node/no-unpublished-import */
 import test from 'ava';
 import {matchValueTester} from '../../../src/internal/match-testing';
-import {trackUnmatched} from '../../../src/internal/match-tracking';
+import {trackMatched, trackUnmatched} from '../../../src/internal/match-tracking';
 
 enum Coin {
     Quarter,
     Nickel,
     Dime,
 }
+
+test('`matchValueTester` should do nothing, when input is matched', t => {
+    // arrange
+    const input = trackMatched(Coin.Dime);
+    const del = () => t.fail('map delegate was called');
+
+    // act
+    const actual = matchValueTester(input, Coin.Dime, (del as unknown) as Coin);
+
+    // assert
+    t.is(actual, input);
+});
 
 test('`matchValueTester` should match, when input reference equals value', t => {
     // arrange
