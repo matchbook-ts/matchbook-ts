@@ -1,32 +1,32 @@
 /* eslint-disable node/no-unpublished-import */
 import test from 'ava';
-import type {SinonSandbox} from 'sinon';
 import {pattern} from '../../src';
-import strikeModule = require('../../src/public/strike');
-import {createSandbox} from 'sinon';
+import {DefaultExecutor, MatchExecutor} from '../../src/internal/match-execution/types';
 import {trackMatched} from '../../src/internal/match-tracking';
 
-let sandbox: SinonSandbox;
-
-test.beforeEach(() => {
-    sandbox = createSandbox();
-});
-
-test.afterEach(() => {
-    sandbox.restore();
-});
-
-test('`pattern` should return a delegate that wraps strike', t => {
+test('`pattern` should return TIn | TOut, when matchers are not exhaustive', t => {
     // arrange
     const input = 12;
-    const matcherA = () => trackMatched(123);
-
-    const strikeStub = sandbox.stub(strikeModule, 'strike');
+    const expected = '123';
+    const matcherA: MatchExecutor<number, string> = () => trackMatched(expected);
 
     // act
-    const pat = pattern(matcherA);
-    pat(input);
+    const actual = pattern(matcherA)(input);
 
     // assert
-    t.true(strikeStub.calledOnceWith(input, matcherA));
+    t.is(actual, expected);
+});
+
+test('`pattern` should return TOut, when matchers are exhaustive', t => {
+    // arrange
+    const input = 12;
+    const expected = '123';
+    const matcherA: MatchExecutor<number, string> = i => i;
+    const matcherB: DefaultExecutor<number, string> = () => trackMatched(expected);
+
+    // act
+    const actual: string = pattern(matcherA, matcherB)(input);
+
+    // assert
+    t.is(actual, expected);
 });
