@@ -7,6 +7,9 @@ import {Ctor, Fn, MapFnOrValue} from '../internal/common';
  * @description
  * ## Match if `val` is an instance of a Constructor
  *
+ * @since 1.0.0
+ *
+ * @example
  * ```typescript
  * import { match, strike, otherwise } from 'matchbook';
  *
@@ -36,6 +39,9 @@ function match<TIn, TInExt extends TIn, TOut>(
  * @description
  * ## Match if `val` satisfies a {@link https://www.typescriptlang.org/docs/handbook/advanced-types.html#user-defined-type-guards|Type Guard}
  *
+ * @since 1.0.0
+ *
+ * @example
  * ```typescript
  * import { match, strike, otherwise } from 'matchbook';
  *
@@ -63,6 +69,9 @@ function match<TIn, TInExt extends TIn, TOut>(
  * @description
  * ## Match if `val` satisfies a Predicate
  *
+ * @since 1.0.0
+ *
+ * @example
  * ```typescript
  * import { match, strike, otherwise } from 'matchbook';
  *
@@ -81,6 +90,9 @@ function match<TIn, TOut>(ifTrue: Fn<(val: TIn) => boolean>, then: MapFnOrValue<
  * @description
  * ## Match if `val` equals a lazy value
  *
+ * @since 1.0.0
+ *
+ * @example
  * ```typescript
  * import { match, strike, otherwise } from 'matchbook';
  *
@@ -109,6 +121,9 @@ function match<TIn, TOut>(ifEquals: Fn<() => TIn>, then: MapFnOrValue<TIn, TOut>
  * @description
  * ## Match if `val` matches part of another
  *
+ * @since 1.0.0
+ *
+ * @example
  * ```typescript
  * import { match, pattern, otherwise } from 'matchbook';
  *
@@ -149,4 +164,11 @@ function match<TIn, TOut, TInExt extends TIn = TIn>(
     return delegate;
 }
 
-export {match, match as m, match as arm};
+export {
+    match,
+    match as m,
+    /** @since 1.0.0 */
+    match as arm,
+    /** @since 1.0.0 */
+    match as when,
+};

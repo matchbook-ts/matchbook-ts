@@ -9,6 +9,9 @@ import {isMatched, trackMatched} from '../internal/match-tracking';
  * constant value of type R or a delegate
  * that returns a value of type R
  *
+ * @since 1.0.0
+ *
+ * @example
  * ```typescript
  * enum Time {
  *     Morning = 'Morning',
@@ -35,4 +38,10 @@ const otherwise: <TIn = any, TOut = any>(
     return trackMatched(defaultValue);
 };
 
-export {otherwise, otherwise as rest, otherwise as _};
+export {
+    otherwise,
+    /** @since 1.0.0 */
+    otherwise as rest,
+    /** @since 1.0.0 */
+    otherwise as _,
+};
