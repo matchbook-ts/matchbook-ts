@@ -74,7 +74,7 @@
 							<h3>References</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_public_match_.html#arm" class="tsd-kind-icon">arm</a></li>
-								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_public_match_.html#m" class="tsd-kind-icon">m</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_public_match_.html#when" class="tsd-kind-icon">when</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
@@ -94,8 +94,8 @@
 					Renames and re-exports <a href="_public_match_.html#match">match</a>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
-					<a name="m" class="tsd-anchor"></a>
-					<h3>m</h3>
+					<a name="when" class="tsd-anchor"></a>
+					<h3>when</h3>
 					Renames and re-exports <a href="_public_match_.html#match">match</a>
 				</section>
 			</section>
@@ -109,13 +109,13 @@
 						<li class="tsd-signature tsd-kind-icon">match&lt;TIn, TInExt, TOut&gt;<span class="tsd-signature-symbol">(</span>ifIsType<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Fn</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">(</span>val<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">TIn</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">val</span><span class="tsd-signature-symbol"> is </span><span class="tsd-signature-type">TInExt</span><span class="tsd-signature-symbol">&gt;</span>, then<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">MapFnOrValue</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">TInExt</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">TOut</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">MatchExecutor</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">TIn</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">TOut</span><span class="tsd-signature-symbol">&gt;</span></li>
 						<li class="tsd-signature tsd-kind-icon">match&lt;TIn, TOut&gt;<span class="tsd-signature-symbol">(</span>ifTrue<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Fn</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">(</span>val<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">TIn</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span>, then<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">MapFnOrValue</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">TIn</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">TOut</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">MatchExecutor</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">TIn</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">TOut</span><span class="tsd-signature-symbol">&gt;</span></li>
 						<li class="tsd-signature tsd-kind-icon">match&lt;TIn, TOut&gt;<span class="tsd-signature-symbol">(</span>ifEquals<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Fn</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">TIn</span><span class="tsd-signature-symbol">&gt;</span>, then<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">MapFnOrValue</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">TIn</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">TOut</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">MatchExecutor</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">TIn</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">TOut</span><span class="tsd-signature-symbol">&gt;</span></li>
-						<li class="tsd-signature tsd-kind-icon">match&lt;TIn, TOut&gt;<span class="tsd-signature-symbol">(</span>ifEquals<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">TIn</span>, then<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">MapFnOrValue</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">typeof </span><span class="tsd-signature-type">ifEquals</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">TOut</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">MatchExecutor</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">TIn</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">TOut</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">match&lt;TIn, TOut, TStructure&gt;<span class="tsd-signature-symbol">(</span>ifMatches<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">TStructure</span>, then<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">MapFnOrValue</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">TIn</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">TOut</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">MatchExecutor</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">TIn</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">TOut</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/matchbook-ts/matchbook-ts/blob/f6d29bb/src/public/match.ts#L30">src/public/match.ts:30</a></li>
+									<li>Defined in <a href="https://github.com/matchbook-ts/matchbook-ts/blob/ec07198/src/public/match.ts#L33">src/public/match.ts:33</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -125,7 +125,12 @@
 										<a href="#match-if-val-is-an-instance-of-a-constructor" id="match-if-val-is-an-instance-of-a-constructor" style="color: inherit; text-decoration: none;">
 											<h2>Match if <code>val</code> is an instance of a Constructor</h2>
 										</a>
-										<pre><code class="language-typescript"><span class="hljs-keyword">import</span> { match, strike, otherwise } <span class="hljs-keyword">from</span> <span class="hljs-string">'matchbook'</span>;
+									</dd>
+									<dt>since</dt>
+									<dd><p>1.0.0</p>
+									</dd>
+									<dt>example</dt>
+									<dd><pre><code class="language-typescript"><span class="hljs-keyword">import</span> { match, strike, otherwise } <span class="hljs-keyword">from</span> <span class="hljs-string">'matchbook'</span>;
 
 <span class="hljs-comment">// Get the level of Personal Protective Equipment for each career</span>
 <span class="hljs-keyword">class</span> Human { }
@@ -171,7 +176,7 @@ assertEq(actual, PpeLevel.Low);</code></pre>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/matchbook-ts/matchbook-ts/blob/f6d29bb/src/public/match.ts#L57">src/public/match.ts:57</a></li>
+									<li>Defined in <a href="https://github.com/matchbook-ts/matchbook-ts/blob/ec07198/src/public/match.ts#L63">src/public/match.ts:63</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -181,7 +186,12 @@ assertEq(actual, PpeLevel.Low);</code></pre>
 										<a href="#match-if-val-satisfies-a-type-guard" id="match-if-val-satisfies-a-type-guard" style="color: inherit; text-decoration: none;">
 											<h2>Match if <code>val</code> satisfies a <a href="https://www.typescriptlang.org/docs/handbook/advanced-types.html#user-defined-type-guards" class="external">Type Guard</a></h2>
 										</a>
-										<pre><code class="language-typescript"><span class="hljs-keyword">import</span> { match, strike, otherwise } <span class="hljs-keyword">from</span> <span class="hljs-string">'matchbook'</span>;
+									</dd>
+									<dt>since</dt>
+									<dd><p>1.0.0</p>
+									</dd>
+									<dt>example</dt>
+									<dd><pre><code class="language-typescript"><span class="hljs-keyword">import</span> { match, strike, otherwise } <span class="hljs-keyword">from</span> <span class="hljs-string">'matchbook'</span>;
 
 <span class="hljs-keyword">const</span> actual = strike&lt;unknown, <span class="hljs-built_in">string</span>&gt;(
     <span class="hljs-number">4</span>,
@@ -225,7 +235,7 @@ assertEq(actual, <span class="hljs-string">'sqrt: 2'</span>);</code></pre>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/matchbook-ts/matchbook-ts/blob/f6d29bb/src/public/match.ts#L78">src/public/match.ts:78</a></li>
+									<li>Defined in <a href="https://github.com/matchbook-ts/matchbook-ts/blob/ec07198/src/public/match.ts#L87">src/public/match.ts:87</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -235,7 +245,12 @@ assertEq(actual, <span class="hljs-string">'sqrt: 2'</span>);</code></pre>
 										<a href="#match-if-val-satisfies-a-predicate" id="match-if-val-satisfies-a-predicate" style="color: inherit; text-decoration: none;">
 											<h2>Match if <code>val</code> satisfies a Predicate</h2>
 										</a>
-										<pre><code class="language-typescript"><span class="hljs-keyword">import</span> { match, strike, otherwise } <span class="hljs-keyword">from</span> <span class="hljs-string">'matchbook'</span>;
+									</dd>
+									<dt>since</dt>
+									<dd><p>1.0.0</p>
+									</dd>
+									<dt>example</dt>
+									<dd><pre><code class="language-typescript"><span class="hljs-keyword">import</span> { match, strike, otherwise } <span class="hljs-keyword">from</span> <span class="hljs-string">'matchbook'</span>;
 
 <span class="hljs-keyword">const</span> actual = strike(
     <span class="hljs-string">'     '</span>,
@@ -270,7 +285,7 @@ assertEq(actual, <span class="hljs-string">`that's empty! outrageous!`</span>);<
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/matchbook-ts/matchbook-ts/blob/f6d29bb/src/public/match.ts#L106">src/public/match.ts:106</a></li>
+									<li>Defined in <a href="https://github.com/matchbook-ts/matchbook-ts/blob/ec07198/src/public/match.ts#L118">src/public/match.ts:118</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -280,7 +295,12 @@ assertEq(actual, <span class="hljs-string">`that's empty! outrageous!`</span>);<
 										<a href="#match-if-val-equals-a-lazy-value" id="match-if-val-equals-a-lazy-value" style="color: inherit; text-decoration: none;">
 											<h2>Match if <code>val</code> equals a lazy value</h2>
 										</a>
-										<pre><code class="language-typescript"><span class="hljs-keyword">import</span> { match, strike, otherwise } <span class="hljs-keyword">from</span> <span class="hljs-string">'matchbook'</span>;
+									</dd>
+									<dt>since</dt>
+									<dd><p>1.0.0</p>
+									</dd>
+									<dt>example</dt>
+									<dd><pre><code class="language-typescript"><span class="hljs-keyword">import</span> { match, strike, otherwise } <span class="hljs-keyword">from</span> <span class="hljs-string">'matchbook'</span>;
 
 <span class="hljs-keyword">enum</span> Emoji {
     Smiley = <span class="hljs-string">'😊'</span>,
@@ -325,32 +345,37 @@ assertEq(actual, <span class="hljs-string">'very popular!'</span>);</code></pre>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/matchbook-ts/matchbook-ts/blob/f6d29bb/src/public/match.ts#L131">src/public/match.ts:131</a></li>
+									<li>Defined in <a href="https://github.com/matchbook-ts/matchbook-ts/blob/ec07198/src/public/match.ts#L145">src/public/match.ts:145</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<dl class="tsd-comment-tags">
 									<dt>description</dt>
 									<dd>
-										<a href="#match-if-val-equals-a-value" id="match-if-val-equals-a-value" style="color: inherit; text-decoration: none;">
-											<h2>Match if <code>val</code> equals a value</h2>
+										<a href="#match-if-val-matches-part-of-another" id="match-if-val-matches-part-of-another" style="color: inherit; text-decoration: none;">
+											<h2>Match if <code>val</code> matches part of another</h2>
 										</a>
-										<pre><code class="language-typescript"><span class="hljs-keyword">import</span> { match, strike, otherwise } <span class="hljs-keyword">from</span> <span class="hljs-string">'matchbook'</span>;
+									</dd>
+									<dt>since</dt>
+									<dd><p>1.0.0</p>
+									</dd>
+									<dt>example</dt>
+									<dd><pre><code class="language-typescript"><span class="hljs-keyword">import</span> { match, pattern, otherwise } <span class="hljs-keyword">from</span> <span class="hljs-string">'matchbook'</span>;
 
-<span class="hljs-keyword">enum</span> Emoji {
-    Smiley = <span class="hljs-string">'😊'</span>,
-    Sad = <span class="hljs-string">'😢'</span>,
-}
-
-<span class="hljs-keyword">const</span> actual = strike(
-    <span class="hljs-string">'😊'</span>,
-    match(Emoji.Smiley, <span class="hljs-string">':smiley:'</span>),
-    match(Emoji.Sad, <span class="hljs-string">':sad:'</span>),
-    otherwise(<span class="hljs-string">'unknown emoji'</span>)
+<span class="hljs-keyword">const</span> getGoodBirthdayGift = pattern(
+    match({ hobby: Hobby.Golf }, <span class="hljs-string">'golf cart'</span>),
+    match({ hobby: Hobby.Woodworking }, <span class="hljs-string">'table saw'</span>),
+    match({ hobby: Hobby.Blacksmithing }, <span class="hljs-string">'tongs'</span>),
+    otherwise(<span class="hljs-string">'money'</span>)
 );
 
-assertEq(actual, <span class="hljs-string">':smiley:'</span>);</code></pre>
-									<pre><code></code></pre></dd>
+<span class="hljs-keyword">const</span> steve = {
+    name: <span class="hljs-string">'Steve'</span>,
+    hobby: Hobby.Woodworking,
+};
+
+assertEq(getGoodBirthdayGift(steve), <span class="hljs-string">'table saw'</span>);</code></pre>
+									</dd>
 								</dl>
 							</div>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -361,14 +386,17 @@ assertEq(actual, <span class="hljs-string">':smiley:'</span>);</code></pre>
 								<li>
 									<h4>TOut</h4>
 								</li>
+								<li>
+									<h4>TStructure<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">TIn</span><span class="tsd-signature-symbol">&gt;</span></h4>
+								</li>
 							</ul>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>ifEquals: <span class="tsd-signature-type">TIn</span></h5>
+									<h5>ifMatches: <span class="tsd-signature-type">TStructure</span></h5>
 								</li>
 								<li>
-									<h5>then: <span class="tsd-signature-type">MapFnOrValue</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">typeof </span><span class="tsd-signature-type">ifEquals</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">TOut</span><span class="tsd-signature-symbol">&gt;</span></h5>
+									<h5>then: <span class="tsd-signature-type">MapFnOrValue</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">TIn</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">TOut</span><span class="tsd-signature-symbol">&gt;</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">MatchExecutor</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">TIn</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">TOut</span><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -385,6 +413,9 @@ assertEq(actual, <span class="hljs-string">':smiley:'</span>);</code></pre>
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="_index_.html">&quot;index&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="_internal_match_execution_types_any_executor_.html">&quot;internal/match-<wbr>execution/types/any-<wbr>executor&quot;</a>
 					</li>
 					<li class="current tsd-kind-module">
 						<a href="_public_match_.html">&quot;public/match&quot;</a>
@@ -409,7 +440,7 @@ assertEq(actual, <span class="hljs-string">':smiley:'</span>);</code></pre>
 						<a href="_public_match_.html#arm" class="tsd-kind-icon">arm</a>
 					</li>
 					<li class=" tsd-kind-reference tsd-parent-kind-module">
-						<a href="_public_match_.html#m" class="tsd-kind-icon">m</a>
+						<a href="_public_match_.html#when" class="tsd-kind-icon">when</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter">
 						<a href="_public_match_.html#match" class="tsd-kind-icon">match</a>
@@ -426,6 +457,7 @@ assertEq(actual, <span class="hljs-string">':smiley:'</span>);</code></pre>
 			<ul class="tsd-legend">
 				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
 				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
+				<li class="tsd-kind-type-alias tsd-has-type-parameter"><span class="tsd-kind-icon">Type alias with type parameter</span></li>
 			</ul>
 			<ul class="tsd-legend">
 				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
