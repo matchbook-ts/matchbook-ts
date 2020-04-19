@@ -10,6 +10,9 @@ import {isUnmatched, TrackedEither} from '../internal/match-tracking';
  *
  * @throws {@link UnwrapError}
  *
+ * @since 1.0.0
+ *
+ * @example
  * ```typescript
  * enum Time {
  *     Morning = 'Morning',

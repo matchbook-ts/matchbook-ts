@@ -16,6 +16,11 @@ import {ExhaustiveStrikeSigs, NonExhaustiveStrikeSigs} from '../internal/overloa
  * operator in Rust, F#, and other languages
  * with idiomatic Pattern Matching.
  *
+ * @see {@link pattern}
+ *
+ * @since 1.0.0
+ *
+ * @example
  * ```typescript
  * enum Coin {
  *     Quarter,

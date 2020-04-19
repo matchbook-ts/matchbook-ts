@@ -19,6 +19,10 @@ import {strike} from './strike';
  * matchers passed to {@link pattern}.
  *
  * @see {@link strike}
+ *
+ * @since 1.0.0
+ *
+ * @example
  * ```typescript
  * enum Coin {
  *     Quarter,
@@ -40,4 +44,9 @@ const pattern: PatternExhaustiveSigs & PatternNonExhaustiveSigs = <TIn, TOut>(
     ...matchers: Array<AnyExecutor<TIn, TOut>>
 ) => (val: TIn) => (strike as StrikeRest)(val, ...matchers);
 
-export {pattern, pattern as book};
+export {
+    /** @since 1.0.0 */
+    pattern,
+    /** @since 1.0.0 */
+    pattern as book,
+};
