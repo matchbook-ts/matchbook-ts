@@ -4,7 +4,10 @@ import {_, arm, book} from '../../../src';
 import {Fn} from '../../../src/internal/common/types';
 import {Cat, Dog, Entity, Spiderman, Toad} from './types';
 
-// e2e test using `pattern`, ctor matching, and `otherwise`
+/**
+ * @file e2e test using `pattern`, ctor matching, and `otherwise`
+ */
+
 const getCatchphrase: Fn<(_: Entity) => string> = book(
     arm(Cat, 'meow'),
     arm(Dog, 'woof'),

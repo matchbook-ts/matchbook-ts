@@ -1,6 +1,182 @@
-import {DefaultExecutor, InferReturnTypeOfExecutors, MatchExecutor} from '../internal/match-execution';
+import {AnyExecutor, DefaultExecutor, MatchExecutor} from '../internal/match-execution';
+import {UnwrapExecutor} from '../internal/match-execution/types/unwrap-executor';
 import {isMatched, trackUnmatched} from '../internal/match-tracking';
 import {Matched, Unmatched} from '../internal/match-tracking/types';
+
+interface StrikeNonExhaustive {
+    <TIn, TOut>(val: TIn, arm0: MatchExecutor<TIn, TOut>): TIn | TOut;
+    <TIn, TOut>(val: TIn, arm0: MatchExecutor<TIn, TOut>, arm1: MatchExecutor<TIn, TOut>): TIn | TOut;
+    <TIn, TOut>(
+        val: TIn,
+        arm0: MatchExecutor<TIn, TOut>,
+        arm1: MatchExecutor<TIn, TOut>,
+        arm2: MatchExecutor<TIn, TOut>
+    ): TIn | TOut;
+    <TIn, TOut>(
+        val: TIn,
+        arm0: MatchExecutor<TIn, TOut>,
+        arm1: MatchExecutor<TIn, TOut>,
+        arm2: MatchExecutor<TIn, TOut>,
+        arm3: MatchExecutor<TIn, TOut>
+    ): TIn | TOut;
+    <TIn, TOut>(
+        val: TIn,
+        arm0: MatchExecutor<TIn, TOut>,
+        arm1: MatchExecutor<TIn, TOut>,
+        arm2: MatchExecutor<TIn, TOut>,
+        arm3: MatchExecutor<TIn, TOut>,
+        arm4: MatchExecutor<TIn, TOut>
+    ): TIn | TOut;
+    <TIn, TOut>(
+        val: TIn,
+        arm0: MatchExecutor<TIn, TOut>,
+        arm1: MatchExecutor<TIn, TOut>,
+        arm2: MatchExecutor<TIn, TOut>,
+        arm3: MatchExecutor<TIn, TOut>,
+        arm4: MatchExecutor<TIn, TOut>,
+        arm5: MatchExecutor<TIn, TOut>
+    ): TIn | TOut;
+    <TIn, TOut>(
+        val: TIn,
+        arm0: MatchExecutor<TIn, TOut>,
+        arm1: MatchExecutor<TIn, TOut>,
+        arm2: MatchExecutor<TIn, TOut>,
+        arm3: MatchExecutor<TIn, TOut>,
+        arm4: MatchExecutor<TIn, TOut>,
+        arm5: MatchExecutor<TIn, TOut>,
+        arm6: MatchExecutor<TIn, TOut>
+    ): TIn | TOut;
+    <TIn, TOut>(
+        val: TIn,
+        arm0: MatchExecutor<TIn, TOut>,
+        arm1: MatchExecutor<TIn, TOut>,
+        arm2: MatchExecutor<TIn, TOut>,
+        arm3: MatchExecutor<TIn, TOut>,
+        arm4: MatchExecutor<TIn, TOut>,
+        arm5: MatchExecutor<TIn, TOut>,
+        arm6: MatchExecutor<TIn, TOut>,
+        arm7: MatchExecutor<TIn, TOut>
+    ): TIn | TOut;
+    <TIn, TOut>(
+        val: TIn,
+        arm0: MatchExecutor<TIn, TOut>,
+        arm1: MatchExecutor<TIn, TOut>,
+        arm2: MatchExecutor<TIn, TOut>,
+        arm3: MatchExecutor<TIn, TOut>,
+        arm4: MatchExecutor<TIn, TOut>,
+        arm5: MatchExecutor<TIn, TOut>,
+        arm6: MatchExecutor<TIn, TOut>,
+        arm7: MatchExecutor<TIn, TOut>,
+        arm8: MatchExecutor<TIn, TOut>
+    ): TIn | TOut;
+    <TIn, TOut>(
+        val: TIn,
+        arm0: MatchExecutor<TIn, TOut>,
+        arm1: MatchExecutor<TIn, TOut>,
+        arm2: MatchExecutor<TIn, TOut>,
+        arm3: MatchExecutor<TIn, TOut>,
+        arm4: MatchExecutor<TIn, TOut>,
+        arm5: MatchExecutor<TIn, TOut>,
+        arm6: MatchExecutor<TIn, TOut>,
+        arm7: MatchExecutor<TIn, TOut>,
+        arm8: MatchExecutor<TIn, TOut>,
+        arm9: MatchExecutor<TIn, TOut>
+    ): TIn | TOut;
+}
+
+interface StrikeExhaustive {
+    <TIn, TOut>(val: TIn, arm0: MatchExecutor<TIn, TOut>, otherwise: DefaultExecutor<TIn> | UnwrapExecutor): TOut;
+    <TIn, TOut>(
+        val: TIn,
+        arm0: MatchExecutor<TIn, TOut>,
+        arm1: MatchExecutor<TIn, TOut>,
+        otherwise: DefaultExecutor<TIn> | UnwrapExecutor
+    ): TOut;
+    <TIn, TOut>(
+        val: TIn,
+        arm0: MatchExecutor<TIn, TOut>,
+        arm1: MatchExecutor<TIn, TOut>,
+        arm2: MatchExecutor<TIn, TOut>,
+        otherwise: DefaultExecutor<TIn> | UnwrapExecutor
+    ): TOut;
+    <TIn, TOut>(
+        val: TIn,
+        arm0: MatchExecutor<TIn, TOut>,
+        arm1: MatchExecutor<TIn, TOut>,
+        arm2: MatchExecutor<TIn, TOut>,
+        arm3: MatchExecutor<TIn, TOut>,
+        otherwise: DefaultExecutor<TIn> | UnwrapExecutor
+    ): TOut;
+    <TIn, TOut>(
+        val: TIn,
+        arm0: MatchExecutor<TIn, TOut>,
+        arm1: MatchExecutor<TIn, TOut>,
+        arm2: MatchExecutor<TIn, TOut>,
+        arm3: MatchExecutor<TIn, TOut>,
+        arm4: MatchExecutor<TIn, TOut>,
+        otherwise: DefaultExecutor<TIn> | UnwrapExecutor
+    ): TOut;
+    <TIn, TOut>(
+        val: TIn,
+        arm0: MatchExecutor<TIn, TOut>,
+        arm1: MatchExecutor<TIn, TOut>,
+        arm2: MatchExecutor<TIn, TOut>,
+        arm3: MatchExecutor<TIn, TOut>,
+        arm4: MatchExecutor<TIn, TOut>,
+        arm5: MatchExecutor<TIn, TOut>,
+        otherwise: DefaultExecutor<TIn> | UnwrapExecutor
+    ): TOut;
+    <TIn, TOut>(
+        val: TIn,
+        arm0: MatchExecutor<TIn, TOut>,
+        arm1: MatchExecutor<TIn, TOut>,
+        arm2: MatchExecutor<TIn, TOut>,
+        arm3: MatchExecutor<TIn, TOut>,
+        arm4: MatchExecutor<TIn, TOut>,
+        arm5: MatchExecutor<TIn, TOut>,
+        arm6: MatchExecutor<TIn, TOut>,
+        otherwise: DefaultExecutor<TIn> | UnwrapExecutor
+    ): TOut;
+    <TIn, TOut>(
+        val: TIn,
+        arm0: MatchExecutor<TIn, TOut>,
+        arm1: MatchExecutor<TIn, TOut>,
+        arm2: MatchExecutor<TIn, TOut>,
+        arm3: MatchExecutor<TIn, TOut>,
+        arm4: MatchExecutor<TIn, TOut>,
+        arm5: MatchExecutor<TIn, TOut>,
+        arm6: MatchExecutor<TIn, TOut>,
+        arm7: MatchExecutor<TIn, TOut>,
+        otherwise: DefaultExecutor<TIn> | UnwrapExecutor
+    ): TOut;
+    <TIn, TOut>(
+        val: TIn,
+        arm0: MatchExecutor<TIn, TOut>,
+        arm1: MatchExecutor<TIn, TOut>,
+        arm2: MatchExecutor<TIn, TOut>,
+        arm3: MatchExecutor<TIn, TOut>,
+        arm4: MatchExecutor<TIn, TOut>,
+        arm5: MatchExecutor<TIn, TOut>,
+        arm6: MatchExecutor<TIn, TOut>,
+        arm7: MatchExecutor<TIn, TOut>,
+        arm8: MatchExecutor<TIn, TOut>,
+        otherwise: DefaultExecutor<TIn> | UnwrapExecutor
+    ): TOut;
+    <TIn, TOut>(
+        val: TIn,
+        arm0: MatchExecutor<TIn, TOut>,
+        arm1: MatchExecutor<TIn, TOut>,
+        arm2: MatchExecutor<TIn, TOut>,
+        arm3: MatchExecutor<TIn, TOut>,
+        arm4: MatchExecutor<TIn, TOut>,
+        arm5: MatchExecutor<TIn, TOut>,
+        arm6: MatchExecutor<TIn, TOut>,
+        arm7: MatchExecutor<TIn, TOut>,
+        arm8: MatchExecutor<TIn, TOut>,
+        arm9: MatchExecutor<TIn, TOut>,
+        otherwise: DefaultExecutor<TIn> | UnwrapExecutor
+    ): TOut;
+}
 
 /**
  * @description
@@ -33,15 +209,15 @@ import {Matched, Unmatched} from '../internal/match-tracking/types';
  * assertEq(getValue(Coin.Nickel), 0.05);
  * ```
  */
-export function strike<TIn, TArgs extends Array<MatchExecutor<TIn> | DefaultExecutor<TIn>>>(
+export const strike: StrikeExhaustive & StrikeNonExhaustive = <TIn, TOut>(
     val: TIn,
-    ...matchers: TArgs
-): InferReturnTypeOfExecutors<TArgs> {
-    let tracker: Unmatched<TIn> | Matched<unknown> = trackUnmatched(val);
+    ...matchers: Array<AnyExecutor<TIn, TOut>>
+): TIn | TOut => {
+    let tracker: Unmatched<TIn> | Matched<TOut> = trackUnmatched(val);
     for (const matcher of matchers) {
         tracker = matcher(tracker);
         if (isMatched(tracker)) break;
     }
 
-    return tracker.val as InferReturnTypeOfExecutors<TArgs>;
-}
+    return tracker.val;
+};

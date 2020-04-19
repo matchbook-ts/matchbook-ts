@@ -107,30 +107,6 @@ function match<TIn, TOut>(ifEquals: Fn<() => TIn>, then: MapFnOrValue<TIn, TOut>
 
 /**
  * @description
- * ## Match if `val` equals a value
- *
- * ```typescript
- * import { match, strike, otherwise } from 'matchbook';
- *
- * enum Emoji {
- *     Smiley = '😊',
- *     Sad = '😢',
- * }
- *
- * const actual = strike(
- *     '😊',
- *     match(Emoji.Smiley, ':smiley:'),
- *     match(Emoji.Sad, ':sad:'),
- *     otherwise('unknown emoji')
- * );
- *
- * assertEq(actual, ':smiley:');
- * ```
- */
-function match<TIn, TOut>(ifEquals: TIn, then: MapFnOrValue<typeof ifEquals, TOut>): MatchExecutor<TIn, TOut>;
-
-/**
- * @description
  * ## Match if `val` matches part of another
  *
  * ```typescript
@@ -151,8 +127,8 @@ function match<TIn, TOut>(ifEquals: TIn, then: MapFnOrValue<typeof ifEquals, TOu
  * assertEq(getGoodBirthdayGift(steve), 'table saw');
  * ```
  */
-function match<TIn extends object, TOut>(
-    ifMatchesStructure: Partial<TIn>,
+function match<TIn, TOut, TStructure extends Partial<TIn>>(
+    ifMatches: TStructure,
     then: MapFnOrValue<TIn, TOut>
 ): MatchExecutor<TIn, TOut>;
 
