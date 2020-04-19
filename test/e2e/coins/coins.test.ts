@@ -1,27 +1,30 @@
 /* eslint-disable node/no-unpublished-import */
 import test from 'ava';
-import {m, rest, strike} from '../../../src';
+import {match, rest, strike} from '../../../src';
 import {Coin, CoinCondition, CoinRarity, CoinType} from './types';
 
-// e2e test using `strike`, constant value matching, and `otherwise`
+/**
+ * @file e2e test using `strike`, constant value matching, and `otherwise`
+ */
 
 function appraiseCoin(coin: Coin) {
-    const conditionFactor = strike(coin.condish, m(CoinCondition.Mint, 5), rest(1));
+    const conditionFactor = strike(coin.condish, match(CoinCondition.Mint, 5), rest(1));
     const yearFactor = 2020 - coin.year;
     const rarityFactor = strike(
-        coin.rarity,
-        m(CoinRarity.Legendary, 50),
-        m(CoinRarity.Rare, 25),
-        m(CoinRarity.Uncommon, 1),
+        coin,
+        match({rarity: CoinRarity.Rare}, 25),
+        match({rarity: CoinRarity.Uncommon}, 1),
+        match({rarity: CoinRarity.Legendary}, 50),
         rest(0)
     );
 
     const baseValue = strike(
-        coin.type,
-        m(CoinType.Quarter, 0.25),
-        m(CoinType.Dime, 0.1),
-        m(CoinType.Nickel, 0.05),
-        m(CoinType.Penny, 0.01)
+        coin,
+        match({type: CoinType.Dime}, 0.1),
+        match({type: CoinType.Penny}, 0.01),
+        match({type: CoinType.Nickel}, 0.05),
+        match({type: CoinType.Quarter}, 0.25),
+        rest(0)
     );
 
     return baseValue * rarityFactor + baseValue * yearFactor + baseValue * conditionFactor;

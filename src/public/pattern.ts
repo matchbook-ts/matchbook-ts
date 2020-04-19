@@ -1,10 +1,9 @@
-import {
-    DefaultExecutor,
-    InferReturnTypeOfExecutors,
-    MatchExecutor,
-    InferInputTypeOfExecutors,
-} from '../internal/match-execution/types';
+import {AnyExecutor} from '../internal/match-execution/types';
+import {PatternExhaustiveSigs, PatternNonExhaustiveSigs} from '../internal/overloads/pattern';
+import {StrikeRest} from '../internal/overloads/strike';
 import {strike} from './strike';
+
+/* eslint-disable @typescript-eslint/no-explicit-any */
 
 /**
  * @description
@@ -37,10 +36,8 @@ import {strike} from './strike';
  * assertEq(getValue(Coin.Nickel), 0.05);
  * ```
  */
-function pattern<TArgs extends Array<MatchExecutor | DefaultExecutor>>(
-    ...matchers: TArgs
-): (val: InferInputTypeOfExecutors<TArgs>) => InferReturnTypeOfExecutors<TArgs> {
-    return val => strike(val, ...matchers);
-}
+const pattern: PatternExhaustiveSigs & PatternNonExhaustiveSigs = <TIn, TOut>(
+    ...matchers: Array<AnyExecutor<TIn, TOut>>
+) => (val: TIn) => (strike as StrikeRest)(val, ...matchers);
 
 export {pattern, pattern as book};

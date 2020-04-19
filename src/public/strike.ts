@@ -1,6 +1,7 @@
-import {DefaultExecutor, InferReturnTypeOfExecutors, MatchExecutor} from '../internal/match-execution';
+import {AnyExecutor} from '../internal/match-execution';
 import {isMatched, trackUnmatched} from '../internal/match-tracking';
 import {Matched, Unmatched} from '../internal/match-tracking/types';
+import {ExhaustiveStrikeSigs, NonExhaustiveStrikeSigs} from '../internal/overloads/strike';
 
 /**
  * @description
@@ -33,15 +34,15 @@ import {Matched, Unmatched} from '../internal/match-tracking/types';
  * assertEq(getValue(Coin.Nickel), 0.05);
  * ```
  */
-export function strike<TIn, TArgs extends Array<MatchExecutor<TIn> | DefaultExecutor<TIn>>>(
+export const strike: ExhaustiveStrikeSigs & NonExhaustiveStrikeSigs = <TIn, TOut>(
     val: TIn,
-    ...matchers: TArgs
-): InferReturnTypeOfExecutors<TArgs> {
-    let tracker: Unmatched<TIn> | Matched<unknown> = trackUnmatched(val);
+    ...matchers: Array<AnyExecutor<TIn, TOut>>
+): TIn | TOut => {
+    let tracker: Unmatched<TIn> | Matched<TOut> = trackUnmatched(val);
     for (const matcher of matchers) {
         tracker = matcher(tracker);
         if (isMatched(tracker)) break;
     }
 
-    return tracker.val as InferReturnTypeOfExecutors<TArgs>;
-}
+    return tracker.val;
+};
