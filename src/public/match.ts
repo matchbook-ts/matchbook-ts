@@ -166,7 +166,6 @@ function match<TIn, TOut, TInExt extends TIn = TIn>(
 
 export {
     match,
-    match as m,
     /** @since 1.0.0 */
     match as arm,
     /** @since 1.0.0 */
