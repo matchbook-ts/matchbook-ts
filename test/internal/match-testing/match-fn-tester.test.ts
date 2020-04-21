@@ -3,7 +3,10 @@ import test from 'ava';
 import {fake} from 'sinon';
 import {Fn} from '../../../src/internal/common/types';
 import {matchFnTester} from '../../../src/internal/match-testing';
-import {trackMatched, trackUnmatched} from '../../../src/internal/match-tracking';
+import {
+    trackMatched,
+    trackUnmatched,
+} from '../../../src/internal/match-tracking';
 
 enum Coin {
     Quarter,
@@ -25,7 +28,8 @@ test('`matchFnTester` should match, when input deep equals return value of funct
 test('`matchFnTester` should not match, when input does not deep equal return value of function', t => {
     // arrange
     const input = trackUnmatched(Coin.Nickel);
-    const transform = () => t.fail('match invoked transform function when value was not a match');
+    const transform = () =>
+        t.fail('match invoked transform function when value was not a match');
 
     // act
     const actual = matchFnTester(input, () => Coin.Quarter, transform);
@@ -50,7 +54,8 @@ test('`matchFnTester` should not match, when input does not satisfy predicate', 
     // arrange
     const input = trackUnmatched(Coin.Nickel);
     const predicate = () => false;
-    const transform = () => t.fail('match invoked transform function when value was not a match');
+    const transform = () =>
+        t.fail('match invoked transform function when value was not a match');
 
     // act
     const actual = matchFnTester(input, predicate, transform);
@@ -76,7 +81,9 @@ test('`matchFnTester` should never invoke delegate, when input matched', t => {
     const input = trackMatched('fart');
     const del = fake(() => true);
     const onMatch: Fn<() => string> = () =>
-        (t.fail('match invoked transform function when value was not a match') as unknown) as string;
+        (t.fail(
+            'match invoked transform function when value was not a match'
+        ) as unknown) as string;
 
     // act
     matchFnTester(input, del, onMatch);
@@ -89,7 +96,9 @@ test('`matchFnTester` should never throw, when delegate is a class constructor',
     // arrange
     const input = trackUnmatched('fart');
     const onMatch: Fn<() => string> = () =>
-        (t.fail('match invoked transform function when value was not a match') as unknown) as string;
+        (t.fail(
+            'match invoked transform function when value was not a match'
+        ) as unknown) as string;
 
     // act
     const closure = () => matchFnTester(input, class E {}, onMatch);
@@ -102,7 +111,9 @@ test('`matchFnTester` should throw, when delegate throws', t => {
     // arrange
     const input = trackUnmatched('fart');
     const onMatch: Fn<() => string> = () =>
-        (t.fail('match invoked transform function when value was not a match') as unknown) as string;
+        (t.fail(
+            'match invoked transform function when value was not a match'
+        ) as unknown) as string;
 
     // act
     const closure = () =>

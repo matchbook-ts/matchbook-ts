@@ -1,6 +1,10 @@
 /* eslint-disable node/no-unpublished-import */
 import test from 'ava';
-import {MatchState, trackMatched, trackUnmatched} from '../../../src/internal/match-tracking';
+import {
+    MatchState,
+    trackMatched,
+    trackUnmatched,
+} from '../../../src/internal/match-tracking';
 
 test('`trackMatched` should return object of type Matched wrapping val', t => {
     // arrange

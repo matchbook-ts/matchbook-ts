@@ -19,7 +19,12 @@ export const matchCtorTester: MatchTester = <TIn, TOut>(
     ctor: unknown,
     transformer: MapFnOrValue<TIn, TOut>
 ) => {
-    if (isUnmatched(tracker) && isFn(ctor) && !!ctor.prototype && tracker.val instanceof ctor) {
+    if (
+        isUnmatched(tracker) &&
+        isFn(ctor) &&
+        !!ctor.prototype &&
+        tracker.val instanceof ctor
+    ) {
         return mapUnmatched(tracker, transformer);
     }
 

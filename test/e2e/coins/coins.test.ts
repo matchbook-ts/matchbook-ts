@@ -8,7 +8,11 @@ import {Coin, CoinCondition, CoinRarity, CoinType} from './types';
  */
 
 function appraiseCoin(coin: Coin) {
-    const conditionFactor = strike(coin.condish, match(CoinCondition.Mint, 5), rest(1));
+    const conditionFactor = strike(
+        coin.condish,
+        match(CoinCondition.Mint, 5),
+        rest(1)
+    );
     const yearFactor = 2020 - coin.year;
     const rarityFactor = strike(
         coin,
@@ -27,7 +31,11 @@ function appraiseCoin(coin: Coin) {
         rest(0)
     );
 
-    return baseValue * rarityFactor + baseValue * yearFactor + baseValue * conditionFactor;
+    return (
+        baseValue * rarityFactor +
+        baseValue * yearFactor +
+        baseValue * conditionFactor
+    );
 }
 
 test('e2e(coins): appraiseCoin should properly appraise old ass quarter', t => {

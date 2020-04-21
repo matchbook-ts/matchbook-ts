@@ -1,4 +1,8 @@
-import {AnyExecutor, DefaultExecutor, MatchExecutor} from '../match-execution/types';
+import {
+    AnyExecutor,
+    DefaultExecutor,
+    MatchExecutor,
+} from '../match-execution/types';
 import {UnwrapExecutor} from '../match-execution/types/unwrap-executor';
 
 /**
@@ -10,7 +14,11 @@ import {UnwrapExecutor} from '../match-execution/types/unwrap-executor';
  */
 export interface NonExhaustiveStrikeSigs {
     <TIn, TOut>(val: TIn, arm0: MatchExecutor<TIn, TOut>): TIn | TOut;
-    <TIn, TOut>(val: TIn, arm0: MatchExecutor<TIn, TOut>, arm1: MatchExecutor<TIn, TOut>): TIn | TOut;
+    <TIn, TOut>(
+        val: TIn,
+        arm0: MatchExecutor<TIn, TOut>,
+        arm1: MatchExecutor<TIn, TOut>
+    ): TIn | TOut;
     <TIn, TOut>(
         val: TIn,
         arm0: MatchExecutor<TIn, TOut>,
@@ -97,7 +105,11 @@ export interface NonExhaustiveStrikeSigs {
  * @internal
  */
 export interface ExhaustiveStrikeSigs {
-    <TIn, TOut>(val: TIn, arm0: MatchExecutor<TIn, TOut>, otherwise: DefaultExecutor<TIn> | UnwrapExecutor): TOut;
+    <TIn, TOut>(
+        val: TIn,
+        arm0: MatchExecutor<TIn, TOut>,
+        otherwise: DefaultExecutor<TIn> | UnwrapExecutor
+    ): TOut;
     <TIn, TOut>(
         val: TIn,
         arm0: MatchExecutor<TIn, TOut>,
@@ -195,4 +207,7 @@ export interface ExhaustiveStrikeSigs {
  * Type alias for a rest argument implementation of Strike
  *
  * @internal */
-export type StrikeRest = <T, R>(v: T, ...mat: Array<AnyExecutor<T, R>>) => T | R;
+export type StrikeRest = <T, R>(
+    v: T,
+    ...mat: Array<AnyExecutor<T, R>>
+) => T | R;

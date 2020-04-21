@@ -21,12 +21,15 @@ export const matchValueTester: MatchTester = <TIn, TOut>(
 ) => {
     if (isMatched(tracker)) return tracker;
 
-    const isObject = (arg: unknown): arg is object => typeof arg === 'object' && arg !== null;
+    const isObject = (arg: unknown): arg is object =>
+        typeof arg === 'object' && arg !== null;
 
     const structureMatches = (left: TIn, right: unknown): boolean =>
         isObject(left) &&
         isObject(right) &&
-        Object.entries(right).every(([k, v]) => k in left && left[k as keyof TIn] === v);
+        Object.entries(right).every(
+            ([k, v]) => k in left && left[k as keyof TIn] === v
+        );
 
     if (structureMatches(tracker.val, rhs)) {
         return mapUnmatched(tracker, mapOrVal);

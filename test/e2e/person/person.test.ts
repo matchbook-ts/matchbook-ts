@@ -11,7 +11,13 @@ const getBirthdayPresent: (p: Person) => string = pattern(
     arm({favoriteHobby: Hobby.Woodworking}, 'table saw'),
     arm({favoriteHobby: Hobby.Metalworking}, 'tig welder'),
     arm(Teacher, 'apple'),
-    arm(isServiceWorker, pattern<ServiceWorker, string>(arm({favoriteHobby: Hobby.Baking}, 'recipe book'), _('money'))),
+    arm(
+        isServiceWorker,
+        pattern<ServiceWorker, string>(
+            arm({favoriteHobby: Hobby.Baking}, 'recipe book'),
+            _('money')
+        )
+    ),
     _('money')
 );
 
