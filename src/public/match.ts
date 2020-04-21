@@ -6,7 +6,7 @@ import {
     matchValueTester,
 } from '../internal/match-testing';
 import {isMatched, TrackedEither} from '../internal/match-tracking';
-import {Ctor, Fn, MapFnOrValue} from '../internal/common';
+import {Ctor, MapFnOrValue} from '../internal/common';
 
 /**
  * @description
@@ -66,7 +66,7 @@ function match<TIn, TInExt extends TIn, TOut>(
  * ```
  */
 function match<TIn, TInExt extends TIn, TOut>(
-    ifIsType: Fn<(val: TIn) => val is TInExt>,
+    ifIsType: (val: TIn) => val is TInExt,
     then: MapFnOrValue<TInExt, TOut>
 ): MatchExecutor<TIn, TOut>;
 
@@ -90,7 +90,7 @@ function match<TIn, TInExt extends TIn, TOut>(
  * ```
  */
 function match<TIn, TOut>(
-    ifTrue: Fn<(val: TIn) => boolean>,
+    ifTrue: (val: TIn) => boolean,
     then: MapFnOrValue<TIn, TOut>
 ): MatchExecutor<TIn, TOut>;
 
@@ -124,7 +124,7 @@ function match<TIn, TOut>(
  * ```
  */
 function match<TIn, TOut>(
-    ifEquals: Fn<() => TIn>,
+    ifEquals: () => TIn,
     then: MapFnOrValue<TIn, TOut>
 ): MatchExecutor<TIn, TOut>;
 
@@ -161,9 +161,9 @@ function match<TIn, TOut, TStructure extends Partial<TIn>>(
 function match<TIn, TOut, TInExt extends TIn = TIn>(
     when:
         | Ctor<TInExt>
-        | Fn<(_: TIn) => _ is TInExt>
-        | Fn<(_: TIn) => boolean>
-        | Fn<() => TIn>
+        | ((_: TIn) => _ is TInExt)
+        | ((_: TIn) => boolean)
+        | (() => TIn)
         | TIn,
     then: MapFnOrValue<TInExt, TOut>
 ): MatchExecutor<TIn, TOut> {

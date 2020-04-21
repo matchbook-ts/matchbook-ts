@@ -1,7 +1,6 @@
 /* eslint-disable node/no-unpublished-import */
 import test from 'ava';
 import {match, unwrap, pattern} from '../../../src';
-import {Fn} from '../../../src/internal/common/types';
 import {
     Event,
     EventType,
@@ -15,7 +14,7 @@ import {
  * @file e2e test using `pattern`, Type Guard matching, and `unwrap`
  */
 
-const getLogMessage: Fn<(event: Event) => string> = pattern(
+const getLogMessage: (event: Event) => string = pattern(
     match(isMessage, m => `you posted a message: ${m.messageBody}`),
     match(isReaction, r => `this is an emoji: ${r.reactionEmojiCode}`),
     unwrap
