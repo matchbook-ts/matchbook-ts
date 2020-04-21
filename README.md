@@ -14,18 +14,16 @@ If you want to start using matchbook, install it like any other npm package:
 `npm i @matchbook/ts`
 
 ---
- 
-[![npm version][npm_ver_badge]][npm_link]
-[![pkg size][npm_size_badge]][npm_link]
-[![build][build_badge]][build_link]
-[![source rank][source_rank_badge]][libraries_io]
-
-![top lang][lang_badge]
-[![codacy][codacy_badge]][codacy_link]
-[![codecov][codecov_badge]][codecov_link]
-![license][license_badge]
 
 ![it's as easy as a-b-c 1-2-3](assets/readme-samples/static/abc_123.snippet.png)
+
+### badges
+|npm                                                |code                                               |other|
+|---                                                |---                                                |---|
+|[![npm version][npm_ver_badge]][npm_link]          |![top lang][lang_badge]                            |[![build][build_badge]][build_link]|
+|[![pkg size][npm_size_badge]][npm_link]            |[![google typescript style][gts_badge]][gts_url]   |![license][license_badge]|
+|[![source rank][source_rank_badge]][libraries_io]  |[![codacy][codacy_badge]][codacy_link]             | |
+|                                                   |[![codecov][codecov_badge]][codecov_link]          | |
 
 ## table of contents
 
@@ -118,3 +116,5 @@ want to know more? [read the docs][api_docs]!
 [codacy_badge]: https://api.codacy.com/project/badge/Grade/dd3aa51feb4b4b9988d2a1c9ea543187
 [codacy_link]: https://www.codacy.com/gh/matchbook-ts/matchbook-ts?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=matchbook-ts/matchbook-ts&amp;utm_campaign=Badge_Grade
 [new_issue]: https://github.com/matchbook-ts/matchbook-ts/issues/new
+[gts_badge]: https://img.shields.io/badge/code%20style-google-blueviolet.svg
+[gts_url]: https://github.com/google/gts
