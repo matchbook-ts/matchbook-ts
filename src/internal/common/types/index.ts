@@ -4,6 +4,5 @@
  */
 
 export * from './ctor';
-export * from './fn';
 export * from './map-fn-or-value';
 export * from './problem';
