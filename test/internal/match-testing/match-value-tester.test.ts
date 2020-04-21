@@ -1,7 +1,10 @@
 /* eslint-disable node/no-unpublished-import */
 import test from 'ava';
 import {matchValueTester} from '../../../src/internal/match-testing';
-import {trackMatched, trackUnmatched} from '../../../src/internal/match-tracking';
+import {
+    trackMatched,
+    trackUnmatched,
+} from '../../../src/internal/match-tracking';
 
 enum Coin {
     Quarter,
@@ -35,7 +38,8 @@ test('`matchValueTester` should match, when input reference equals value', t => 
 test('`matchValueTester` should not match, when input does not reference equal constant value', t => {
     // arrange
     const input = trackUnmatched(Coin.Quarter);
-    const transform = () => t.fail('match invoked transform function when value was not a match');
+    const transform = () =>
+        t.fail('match invoked transform function when value was not a match');
 
     // act
     const actual = matchValueTester(input, Coin.Nickel, transform);
@@ -66,7 +70,8 @@ test('`matchValueTester` should not match, when input does not match structure',
         hobby: 'Woodworking',
     };
     const input = trackUnmatched(steve);
-    const transform = () => t.fail('match invoked transform function when value was not a match');
+    const transform = () =>
+        t.fail('match invoked transform function when value was not a match');
 
     // act
     const actual = matchValueTester(input, {hobby: 'Farting'}, transform);

@@ -33,7 +33,9 @@ const otherwise: <TIn = any, TOut = any>(
 ) => DefaultExecutor<TIn, TOut> = useDefault => tracker => {
     if (isMatched(tracker)) return tracker;
 
-    const defaultValue = isFn(useDefault) ? useDefault(tracker.val) : useDefault;
+    const defaultValue = isFn(useDefault)
+        ? useDefault(tracker.val)
+        : useDefault;
 
     return trackMatched(defaultValue);
 };

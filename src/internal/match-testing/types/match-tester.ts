@@ -1,4 +1,4 @@
-import {Fn, MapFnOrValue} from '../../common/types';
+import {MapFnOrValue} from '../../common/types';
 import {TrackedEither} from '../../match-tracking/types';
 
 /**
@@ -6,6 +6,8 @@ import {TrackedEither} from '../../match-tracking/types';
  *
  * @internal
  */
-export type MatchTester = Fn<
-    <T, R>(input: TrackedEither<T, R>, when: unknown, mapOrVal: MapFnOrValue<T, R>) => TrackedEither<T, R>
->;
+export type MatchTester = <T, R>(
+    input: TrackedEither<T, R>,
+    when: unknown,
+    mapOrVal: MapFnOrValue<T, R>
+) => TrackedEither<T, R>;

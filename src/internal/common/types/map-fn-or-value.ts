@@ -1,5 +1,3 @@
-import {Fn} from './fn';
-
 /**
  * @description
  * Helper type representing either:
@@ -8,4 +6,4 @@ import {Fn} from './fn';
  *
  * @internal
  */
-export type MapFnOrValue<TIn, TOut> = TOut | Fn<(val: TIn) => TOut>;
+export type MapFnOrValue<TIn, TOut> = TOut | ((val: TIn) => TOut);

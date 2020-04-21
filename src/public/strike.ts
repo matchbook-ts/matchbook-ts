@@ -1,7 +1,10 @@
 import {AnyExecutor} from '../internal/match-execution';
 import {isMatched, trackUnmatched} from '../internal/match-tracking';
 import {Matched, Unmatched} from '../internal/match-tracking/types';
-import {ExhaustiveStrikeSigs, NonExhaustiveStrikeSigs} from '../internal/overloads/strike';
+import {
+    ExhaustiveStrikeSigs,
+    NonExhaustiveStrikeSigs,
+} from '../internal/overloads/strike';
 
 /**
  * @description
@@ -39,7 +42,10 @@ import {ExhaustiveStrikeSigs, NonExhaustiveStrikeSigs} from '../internal/overloa
  * assertEq(getValue(Coin.Nickel), 0.05);
  * ```
  */
-export const strike: ExhaustiveStrikeSigs & NonExhaustiveStrikeSigs = <TIn, TOut>(
+export const strike: ExhaustiveStrikeSigs & NonExhaustiveStrikeSigs = <
+    TIn,
+    TOut
+>(
     val: TIn,
     ...matchers: Array<AnyExecutor<TIn, TOut>>
 ): TIn | TOut => {

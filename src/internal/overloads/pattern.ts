@@ -10,10 +10,15 @@ import {UnwrapExecutor} from '../match-execution/types/unwrap-executor';
  */
 export interface PatternNonExhaustiveSigs {
     <TIn, TOut>(arm0: MatchExecutor<TIn, TOut>): (val: TIn) => TIn | TOut;
-    <TIn, TOut>(arm0: MatchExecutor<TIn, TOut>, arm1: MatchExecutor<TIn, TOut>): (val: TIn) => TIn | TOut;
-    <TIn, TOut>(arm0: MatchExecutor<TIn, TOut>, arm1: MatchExecutor<TIn, TOut>, arm2: MatchExecutor<TIn, TOut>): (
-        val: TIn
-    ) => TIn | TOut;
+    <TIn, TOut>(
+        arm0: MatchExecutor<TIn, TOut>,
+        arm1: MatchExecutor<TIn, TOut>
+    ): (val: TIn) => TIn | TOut;
+    <TIn, TOut>(
+        arm0: MatchExecutor<TIn, TOut>,
+        arm1: MatchExecutor<TIn, TOut>,
+        arm2: MatchExecutor<TIn, TOut>
+    ): (val: TIn) => TIn | TOut;
     <TIn, TOut>(
         arm0: MatchExecutor<TIn, TOut>,
         arm1: MatchExecutor<TIn, TOut>,
@@ -87,7 +92,10 @@ export interface PatternNonExhaustiveSigs {
  * @internal
  */
 export interface PatternExhaustiveSigs {
-    <TIn, TOut>(arm0: MatchExecutor<TIn, TOut>, otherwise: DefaultExecutor<TIn> | UnwrapExecutor): (val: TIn) => TOut;
+    <TIn, TOut>(
+        arm0: MatchExecutor<TIn, TOut>,
+        otherwise: DefaultExecutor<TIn> | UnwrapExecutor
+    ): (val: TIn) => TOut;
     <TIn, TOut>(
         arm0: MatchExecutor<TIn, TOut>,
         arm1: MatchExecutor<TIn, TOut>,
