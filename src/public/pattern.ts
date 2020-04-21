@@ -1,5 +1,8 @@
 import {AnyExecutor} from '../internal/match-execution/types';
-import {PatternExhaustiveSigs, PatternNonExhaustiveSigs} from '../internal/overloads/pattern';
+import {
+    PatternExhaustiveSigs,
+    PatternNonExhaustiveSigs,
+} from '../internal/overloads/pattern';
 import {StrikeRest} from '../internal/overloads/strike';
 import {strike} from './strike';
 

@@ -1,5 +1,10 @@
 import {MatchExecutor} from '../internal/match-execution';
-import {matchCtorTester, matchFnTester, MatchTester, matchValueTester} from '../internal/match-testing';
+import {
+    matchCtorTester,
+    matchFnTester,
+    MatchTester,
+    matchValueTester,
+} from '../internal/match-testing';
 import {isMatched, TrackedEither} from '../internal/match-tracking';
 import {Ctor, Fn, MapFnOrValue} from '../internal/common';
 
@@ -84,7 +89,10 @@ function match<TIn, TInExt extends TIn, TOut>(
  * assertEq(actual, `that's empty! outrageous!`);
  * ```
  */
-function match<TIn, TOut>(ifTrue: Fn<(val: TIn) => boolean>, then: MapFnOrValue<TIn, TOut>): MatchExecutor<TIn, TOut>;
+function match<TIn, TOut>(
+    ifTrue: Fn<(val: TIn) => boolean>,
+    then: MapFnOrValue<TIn, TOut>
+): MatchExecutor<TIn, TOut>;
 
 /**
  * @description
@@ -115,7 +123,10 @@ function match<TIn, TOut>(ifTrue: Fn<(val: TIn) => boolean>, then: MapFnOrValue<
  * assertEq(actual, 'very popular!');
  * ```
  */
-function match<TIn, TOut>(ifEquals: Fn<() => TIn>, then: MapFnOrValue<TIn, TOut>): MatchExecutor<TIn, TOut>;
+function match<TIn, TOut>(
+    ifEquals: Fn<() => TIn>,
+    then: MapFnOrValue<TIn, TOut>
+): MatchExecutor<TIn, TOut>;
 
 /**
  * @description
@@ -148,15 +159,26 @@ function match<TIn, TOut, TStructure extends Partial<TIn>>(
 ): MatchExecutor<TIn, TOut>;
 
 function match<TIn, TOut, TInExt extends TIn = TIn>(
-    when: Ctor<TInExt> | Fn<(_: TIn) => _ is TInExt> | Fn<(_: TIn) => boolean> | Fn<() => TIn> | TIn,
+    when:
+        | Ctor<TInExt>
+        | Fn<(_: TIn) => _ is TInExt>
+        | Fn<(_: TIn) => boolean>
+        | Fn<() => TIn>
+        | TIn,
     then: MapFnOrValue<TInExt, TOut>
 ): MatchExecutor<TIn, TOut> {
     const delegate = (t: TrackedEither<TIn, TOut>) => {
         if (isMatched(t)) return t;
 
-        const cases: MatchTester[] = [matchValueTester, matchCtorTester, matchFnTester];
+        const cases: MatchTester[] = [
+            matchValueTester,
+            matchCtorTester,
+            matchFnTester,
+        ];
 
-        const match = cases.map(c => c<TIn, TOut>(t, when, then as MapFnOrValue<TIn, TOut>)).find(isMatched);
+        const match = cases
+            .map(c => c<TIn, TOut>(t, when, then as MapFnOrValue<TIn, TOut>))
+            .find(isMatched);
 
         return match ?? t;
     };

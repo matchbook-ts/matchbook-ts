@@ -20,7 +20,8 @@ test('`mapUnmatched` should return output of mapper, when mapOrVal is fn', t => 
     // arrange
     const input = trackUnmatched(32);
     const expected: Fn<(_: number) => number> = n => {
-        if (typeof n !== 'number') t.fail(`Delegate input "${JSON.stringify(n)}" is not a number.`);
+        if (typeof n !== 'number')
+            t.fail(`Delegate input "${JSON.stringify(n)}" is not a number.`);
         return n + 10;
     };
 

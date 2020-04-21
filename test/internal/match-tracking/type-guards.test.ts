@@ -1,6 +1,12 @@
 /* eslint-disable node/no-unpublished-import */
 import test from 'ava';
-import {isMatched, isUnmatched, Matched, MatchState, Unmatched} from '../../../src/internal/match-tracking';
+import {
+    isMatched,
+    isUnmatched,
+    Matched,
+    MatchState,
+    Unmatched,
+} from '../../../src/internal/match-tracking';
 
 test('`isMatched` should return true, when tracker is matched', t => {
     // arrange
