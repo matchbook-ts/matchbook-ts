@@ -2,13 +2,12 @@
 import test from 'ava';
 import {fake} from 'sinon';
 import {otherwise} from '../../src';
-import {Fn} from '../../src/internal/common/types';
 import {trackMatched, trackUnmatched} from '../../src/internal/match-tracking';
 
 test('`otherwise` should match using map fn, when input unmatched', t => {
     // arrange
     const input = trackUnmatched('input');
-    const mapper: Fn<(_: string) => string> = str => str + '_fart';
+    const mapper = (str: string) => str + '_fart';
 
     // act
     const actual = otherwise(mapper)(input);
@@ -32,7 +31,7 @@ test('`otherwise` should match using default value, when input unmatched', t => 
 test('`otherwise` should return input, when input already matched', t => {
     // arrange
     const input = trackMatched('input');
-    const mapper: Fn<(_: string) => string> = str => str + '_fart';
+    const mapper = (str: string) => str + '_fart';
 
     // act
     const actual = otherwise(mapper)(input);

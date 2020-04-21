@@ -2,7 +2,6 @@
 import test from 'ava';
 import {SinonSandbox, createSandbox, SinonStub} from 'sinon';
 import {match} from '../../src';
-import {Fn} from '../../src/internal/common/types';
 import {
     isMatched,
     Matched,
@@ -82,9 +81,7 @@ test.serial(
         const ctx = t.context as TestContext;
         const input = trackMatched(undefined as void);
 
-        const failFake: Fn<(
-            msg: string
-        ) => () => Matched<unknown>> = msg => () =>
+        const failFake: (msg: string) => () => Matched<unknown> = msg => () =>
             (t.fail(msg) as unknown) as Matched<unknown>;
 
         ctx.valTesterStub.callsFake(failFake('value tester was called'));

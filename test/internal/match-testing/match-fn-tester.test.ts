@@ -1,7 +1,6 @@
 /* eslint-disable node/no-unpublished-import */
 import test from 'ava';
 import {fake} from 'sinon';
-import {Fn} from '../../../src/internal/common/types';
 import {matchFnTester} from '../../../src/internal/match-testing';
 import {
     trackMatched,
@@ -80,7 +79,7 @@ test('`matchFnTester` should never invoke delegate, when input matched', t => {
     // arrange
     const input = trackMatched('fart');
     const del = fake(() => true);
-    const onMatch: Fn<() => string> = () =>
+    const onMatch: () => string = () =>
         (t.fail(
             'match invoked transform function when value was not a match'
         ) as unknown) as string;
@@ -95,7 +94,7 @@ test('`matchFnTester` should never invoke delegate, when input matched', t => {
 test('`matchFnTester` should never throw, when delegate is a class constructor', t => {
     // arrange
     const input = trackUnmatched('fart');
-    const onMatch: Fn<() => string> = () =>
+    const onMatch = () =>
         (t.fail(
             'match invoked transform function when value was not a match'
         ) as unknown) as string;
@@ -110,7 +109,7 @@ test('`matchFnTester` should never throw, when delegate is a class constructor',
 test('`matchFnTester` should throw, when delegate throws', t => {
     // arrange
     const input = trackUnmatched('fart');
-    const onMatch: Fn<() => string> = () =>
+    const onMatch = () =>
         (t.fail(
             'match invoked transform function when value was not a match'
         ) as unknown) as string;
