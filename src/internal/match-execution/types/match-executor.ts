@@ -17,8 +17,5 @@ import {TrackedEither} from '../../match-tracking/types';
  */
 export interface MatchExecutor<TIn = any, TOut = any> {
     __exhaustive?: false;
-    <TInExt extends TIn>(val: TrackedEither<TInExt, TOut>): TrackedEither<
-        TIn,
-        TOut
-    >;
+    (val: TrackedEither<TIn, TOut>): TrackedEither<TIn, TOut>;
 }
