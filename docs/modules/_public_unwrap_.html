@@ -97,7 +97,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/matchbook-ts/matchbook-ts/blob/5500f11/src/public/unwrap.ts#L38">src/public/unwrap.ts:38</a></li>
+									<li>Defined in <a href="https://github.com/matchbook-ts/matchbook-ts/blob/bfbb75a/src/public/unwrap.ts#L38">src/public/unwrap.ts:38</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -114,18 +114,18 @@
 									<dd><p>1.0.0</p>
 									</dd>
 									<dt>example</dt>
-									<dd><pre><code class="language-typescript"><span class="hljs-keyword">enum</span> Time {
-    Morning = <span class="hljs-string">'Morning'</span>,
-    Noon = <span class="hljs-string">'Noon'</span>,
-    Afternoon = <span class="hljs-string">'Afternoon'</span>,
+									<dd><pre><code class="language-typescript"><span class="hljs-built_in">enum</span> Time {
+    Morning = <span class="hljs-string">&#x27;Morning&#x27;</span>,
+    Noon = <span class="hljs-string">&#x27;Noon&#x27;</span>,
+    Afternoon = <span class="hljs-string">&#x27;Afternoon&#x27;</span>,
 };
 <span class="hljs-keyword">const</span> getMessage = pattern(
-    match(Time.Morning, <span class="hljs-string">'Good morning!'</span>),
+    match(Time.Morning, <span class="hljs-string">&#x27;Good morning!&#x27;</span>),
     unwrap(),
 );
 <span class="hljs-keyword">try</span> {
     <span class="hljs-comment">// This will throw!!</span>
-    getMessage(<span class="hljs-string">'blarg!'</span>);
+    getMessage(<span class="hljs-string">&#x27;blarg!&#x27;</span>);
 } <span class="hljs-keyword">catch</span> (e) {
     <span class="hljs-keyword">if</span> (e <span class="hljs-keyword">instanceof</span> UnwrapError) {
         <span class="hljs-built_in">console</span>.error(e.message);
@@ -224,6 +224,5 @@
 </div>
 <div class="overlay"></div>
 <script src="../assets/js/main.js"></script>
-<script>if (location.protocol == 'file:') document.write('<script src="../assets/js/search.js"><' + '/script>');</script>
 </body>
 </html>

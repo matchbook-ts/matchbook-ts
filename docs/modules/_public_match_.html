@@ -115,7 +115,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/matchbook-ts/matchbook-ts/blob/5500f11/src/public/match.ts#L38">src/public/match.ts:38</a></li>
+									<li>Defined in <a href="https://github.com/matchbook-ts/matchbook-ts/blob/bfbb75a/src/public/match.ts#L38">src/public/match.ts:38</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -130,7 +130,7 @@
 									<dd><p>1.0.0</p>
 									</dd>
 									<dt>example</dt>
-									<dd><pre><code class="language-typescript"><span class="hljs-keyword">import</span> { match, strike, otherwise } <span class="hljs-keyword">from</span> <span class="hljs-string">'matchbook'</span>;
+									<dd><pre><code class="language-typescript"><span class="hljs-keyword">import</span> { match, strike, otherwise } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;matchbook&#x27;</span>;
 
 <span class="hljs-comment">// Get the level of Personal Protective Equipment for each career</span>
 <span class="hljs-keyword">class</span> Human { }
@@ -176,7 +176,7 @@ assertEq(actual, PpeLevel.Low);</code></pre>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/matchbook-ts/matchbook-ts/blob/5500f11/src/public/match.ts#L68">src/public/match.ts:68</a></li>
+									<li>Defined in <a href="https://github.com/matchbook-ts/matchbook-ts/blob/bfbb75a/src/public/match.ts#L68">src/public/match.ts:68</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -191,21 +191,21 @@ assertEq(actual, PpeLevel.Low);</code></pre>
 									<dd><p>1.0.0</p>
 									</dd>
 									<dt>example</dt>
-									<dd><pre><code class="language-typescript"><span class="hljs-keyword">import</span> { match, strike, otherwise } <span class="hljs-keyword">from</span> <span class="hljs-string">'matchbook'</span>;
+									<dd><pre><code class="language-typescript"><span class="hljs-keyword">import</span> { match, strike, otherwise } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;matchbook&#x27;</span>;
 
 <span class="hljs-keyword">const</span> actual = strike&lt;unknown, <span class="hljs-built_in">string</span>&gt;(
     <span class="hljs-number">4</span>,
     match(
-        <span class="hljs-function"><span class="hljs-params">n</span> =&gt;</span> <span class="hljs-keyword">typeof</span> n === <span class="hljs-string">'number'</span>,
-        <span class="hljs-comment">// <span class="hljs-doctag">NOTE:</span> Even though we're matching on type unknown,</span>
+        <span class="hljs-function"><span class="hljs-params">n</span> =&gt;</span> <span class="hljs-keyword">typeof</span> n === <span class="hljs-string">&#x27;number&#x27;</span>,
+        <span class="hljs-comment">// <span class="hljs-doctag">NOTE:</span> Even though we&#x27;re matching on type unknown,</span>
         <span class="hljs-comment">//   since our type guard is satisfied,</span>
         <span class="hljs-comment">//   this delegate knows n is a number.</span>
         n =&gt; <span class="hljs-string">`sqrt: <span class="hljs-subst">${<span class="hljs-built_in">Math</span>.sqrt(n)}</span>`</span>
     ),
-    otherwise(<span class="hljs-string">'no clue'</span>)
+    otherwise(<span class="hljs-string">&#x27;no clue&#x27;</span>)
 );
 
-assertEq(actual, <span class="hljs-string">'sqrt: 2'</span>);</code></pre>
+assertEq(actual, <span class="hljs-string">&#x27;sqrt: 2&#x27;</span>);</code></pre>
 									</dd>
 								</dl>
 							</div>
@@ -253,7 +253,7 @@ assertEq(actual, <span class="hljs-string">'sqrt: 2'</span>);</code></pre>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/matchbook-ts/matchbook-ts/blob/5500f11/src/public/match.ts#L92">src/public/match.ts:92</a></li>
+									<li>Defined in <a href="https://github.com/matchbook-ts/matchbook-ts/blob/bfbb75a/src/public/match.ts#L92">src/public/match.ts:92</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -268,15 +268,15 @@ assertEq(actual, <span class="hljs-string">'sqrt: 2'</span>);</code></pre>
 									<dd><p>1.0.0</p>
 									</dd>
 									<dt>example</dt>
-									<dd><pre><code class="language-typescript"><span class="hljs-keyword">import</span> { match, strike, otherwise } <span class="hljs-keyword">from</span> <span class="hljs-string">'matchbook'</span>;
+									<dd><pre><code class="language-typescript"><span class="hljs-keyword">import</span> { match, strike, otherwise } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;matchbook&#x27;</span>;
 
 <span class="hljs-keyword">const</span> actual = strike(
-    <span class="hljs-string">'     '</span>,
-    match(<span class="hljs-function"><span class="hljs-params">s</span> =&gt;</span> s.trim() === <span class="hljs-string">''</span>, <span class="hljs-string">`that's empty! nice try!`</span>),
-    otherwise(<span class="hljs-string">'not empty!'</span>),
+    <span class="hljs-string">&#x27;     &#x27;</span>,
+    match(<span class="hljs-function"><span class="hljs-params">s</span> =&gt;</span> s.trim() === <span class="hljs-string">&#x27;&#x27;</span>, <span class="hljs-string">`that&#x27;s empty! nice try!`</span>),
+    otherwise(<span class="hljs-string">&#x27;not empty!&#x27;</span>),
 );
 
-assertEq(actual, <span class="hljs-string">`that's empty! outrageous!`</span>);</code></pre>
+assertEq(actual, <span class="hljs-string">`that&#x27;s empty! outrageous!`</span>);</code></pre>
 									</dd>
 								</dl>
 							</div>
@@ -321,7 +321,7 @@ assertEq(actual, <span class="hljs-string">`that's empty! outrageous!`</span>);<
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/matchbook-ts/matchbook-ts/blob/5500f11/src/public/match.ts#L126">src/public/match.ts:126</a></li>
+									<li>Defined in <a href="https://github.com/matchbook-ts/matchbook-ts/blob/bfbb75a/src/public/match.ts#L126">src/public/match.ts:126</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -336,12 +336,12 @@ assertEq(actual, <span class="hljs-string">`that's empty! outrageous!`</span>);<
 									<dd><p>1.0.0</p>
 									</dd>
 									<dt>example</dt>
-									<dd><pre><code class="language-typescript"><span class="hljs-keyword">import</span> { match, strike, otherwise } <span class="hljs-keyword">from</span> <span class="hljs-string">'matchbook'</span>;
+									<dd><pre><code class="language-typescript"><span class="hljs-keyword">import</span> { match, strike, otherwise } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;matchbook&#x27;</span>;
 
-<span class="hljs-keyword">enum</span> Emoji {
-    Smiley = <span class="hljs-string">'😊'</span>,
-    Sad = <span class="hljs-string">'😢'</span>,
-    Eggplant = <span class="hljs-string">'🍆'</span>
+<span class="hljs-built_in">enum</span> Emoji {
+    Smiley = <span class="hljs-string">&#x27;😊&#x27;</span>,
+    Sad = <span class="hljs-string">&#x27;😢&#x27;</span>,
+    Eggplant = <span class="hljs-string">&#x27;🍆&#x27;</span>
 }
 
 <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getMostPopularEmoji</span>(<span class="hljs-params"></span>) </span>{
@@ -349,12 +349,12 @@ assertEq(actual, <span class="hljs-string">`that's empty! outrageous!`</span>);<
 }
 
 <span class="hljs-keyword">const</span> actual = strike(
-    <span class="hljs-string">'🍆'</span>,
-    match(getMostPopularEmoji, <span class="hljs-string">'very popular!'</span>),
-    otherwise(<span class="hljs-string">'not popular...'</span>)
+    <span class="hljs-string">&#x27;🍆&#x27;</span>,
+    match(getMostPopularEmoji, <span class="hljs-string">&#x27;very popular!&#x27;</span>),
+    otherwise(<span class="hljs-string">&#x27;not popular...&#x27;</span>)
 );
 
-assertEq(actual, <span class="hljs-string">'very popular!'</span>);</code></pre>
+assertEq(actual, <span class="hljs-string">&#x27;very popular!&#x27;</span>);</code></pre>
 									</dd>
 								</dl>
 							</div>
@@ -393,7 +393,7 @@ assertEq(actual, <span class="hljs-string">'very popular!'</span>);</code></pre>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/matchbook-ts/matchbook-ts/blob/5500f11/src/public/match.ts#L156">src/public/match.ts:156</a></li>
+									<li>Defined in <a href="https://github.com/matchbook-ts/matchbook-ts/blob/bfbb75a/src/public/match.ts#L156">src/public/match.ts:156</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -408,21 +408,21 @@ assertEq(actual, <span class="hljs-string">'very popular!'</span>);</code></pre>
 									<dd><p>1.0.0</p>
 									</dd>
 									<dt>example</dt>
-									<dd><pre><code class="language-typescript"><span class="hljs-keyword">import</span> { match, pattern, otherwise } <span class="hljs-keyword">from</span> <span class="hljs-string">'matchbook'</span>;
+									<dd><pre><code class="language-typescript"><span class="hljs-keyword">import</span> { match, pattern, otherwise } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;matchbook&#x27;</span>;
 
 <span class="hljs-keyword">const</span> getGoodBirthdayGift = pattern(
-    match({ hobby: Hobby.Golf }, <span class="hljs-string">'golf cart'</span>),
-    match({ hobby: Hobby.Woodworking }, <span class="hljs-string">'table saw'</span>),
-    match({ hobby: Hobby.Blacksmithing }, <span class="hljs-string">'tongs'</span>),
-    otherwise(<span class="hljs-string">'money'</span>)
+    match({ hobby: Hobby.Golf }, <span class="hljs-string">&#x27;golf cart&#x27;</span>),
+    match({ hobby: Hobby.Woodworking }, <span class="hljs-string">&#x27;table saw&#x27;</span>),
+    match({ hobby: Hobby.Blacksmithing }, <span class="hljs-string">&#x27;tongs&#x27;</span>),
+    otherwise(<span class="hljs-string">&#x27;money&#x27;</span>)
 );
 
 <span class="hljs-keyword">const</span> steve = {
-    name: <span class="hljs-string">'Steve'</span>,
+    name: <span class="hljs-string">&#x27;Steve&#x27;</span>,
     hobby: Hobby.Woodworking,
 };
 
-assertEq(getGoodBirthdayGift(steve), <span class="hljs-string">'table saw'</span>);</code></pre>
+assertEq(getGoodBirthdayGift(steve), <span class="hljs-string">&#x27;table saw&#x27;</span>);</code></pre>
 									</dd>
 								</dl>
 							</div>
@@ -514,6 +514,5 @@ assertEq(getGoodBirthdayGift(steve), <span class="hljs-string">'table saw'</span
 </div>
 <div class="overlay"></div>
 <script src="../assets/js/main.js"></script>
-<script>if (location.protocol == 'file:') document.write('<script src="../assets/js/search.js"><' + '/script>');</script>
 </body>
 </html>
