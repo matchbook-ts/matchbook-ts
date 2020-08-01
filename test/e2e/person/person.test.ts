@@ -1,19 +1,21 @@
 import test from 'ava';
-import {_, arm, pattern} from '../../../src/public';
-import {Hobby, isServiceWorker, Person, ServiceWorker, Teacher} from './types';
+import {_, arm, strike} from '../../../src/public';
+import {Hobby, isServiceWorker, Person, Teacher} from './types';
 
 /**
  * @file e2e test using `pattern`, all forms of matching, and `otherwise`
  */
 
-const getBirthdayPresent: (p: Person) => string = pattern(
+const getBirthdayPresent: (p: Person) => string = p => strike(
+    p,
     arm((p: Person) => p.name.includes('joe'), 'mamma'),
     arm({favoriteHobby: Hobby.Woodworking}, 'table saw'),
     arm({favoriteHobby: Hobby.Metalworking}, 'tig welder'),
     arm(Teacher, 'apple'),
     arm(
         isServiceWorker,
-        pattern<ServiceWorker, string>(
+        s => strike(
+            s,
             arm({favoriteHobby: Hobby.Baking}, 'recipe book'),
             _('money')
         )
