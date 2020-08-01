@@ -6,5 +6,4 @@
 export * from './match';
 export * from './otherwise';
 export * from './strike';
-export * from './pattern';
 export * from './unwrap';
