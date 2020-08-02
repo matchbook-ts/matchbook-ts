@@ -15,8 +15,14 @@ const john: Person = {
 const getBirthdayGift =
     (p: Person): string => strike(
         p,
-        match({hobby: 'woodworking'}, 'Table saw'),
-        match({hobby: 'welding'}, 'TIG welder'),
+        match(
+            {hobby: 'woodworking'},
+            'Table saw'
+        ),
+        match(
+            {hobby: 'welding'},
+            'TIG welder'
+        ),
         otherwise('Money'),
     );
 
