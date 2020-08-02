@@ -54,14 +54,8 @@ _(list is in no particular order)_
 ## what you can do for matchbook
 ### use it!
 
-The project is currently in `beta`, meaning the functionality & API are complete &
-fully covered by tests, but the library hasn't been battle-tested and may need
-some final tweaks before v1.0.0.
-
-### watch it!
-
-Watch the project for releases to be notified of cool new features,
-and the v1.0.0 release!
+The project is very minimal, with the intent of starting with a very simple & focused API
+that grows with its needs.
 
 ### ask questions!
 
@@ -95,6 +89,7 @@ want to know more? [read the docs][api_docs]!
 ![enum example](assets/readme-samples/static/enum.snippet.png)
 
 ### acting on the type of an Event
+[Type guards][type_guard]
 ![enum example](assets/readme-samples/static/type_guard.snippet.png)
 
 ### matching if a value is an `instanceof` a constructor
@@ -118,3 +113,4 @@ want to know more? [read the docs][api_docs]!
 [new_issue]: https://github.com/matchbook-ts/matchbook-ts/issues/new
 [gts_badge]: https://img.shields.io/badge/code%20style-google-blueviolet.svg
 [gts_url]: https://github.com/google/gts
+[type_guard]: https://www.typescriptlang.org/docs/handbook/advanced-types.html#using-type-predicates

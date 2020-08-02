@@ -1,22 +1,30 @@
-import { match, pattern, otherwise } from '@matchbook/ts';
+import { match, strike, otherwise } from '@matchbook/ts';
 
 type Person = { name: string, hobby: string, };
 
 const steve: Person = {
     name: 'Steve',
-    hobby: 'Woodworking',
+    hobby: 'woodworking',
 };
 
 const john: Person = {
     name: 'John',
-    hobby: 'Metalworking',
+    hobby: 'welding',
 };
 
-const getBirthdayGift: (c: Person) => string = pattern(
-    match({ hobby: 'Woodworking' }, 'Table saw'),
-    match({ hobby: 'Metalworking' }, 'TIG welder'),
-    otherwise('Money'),
-);
+const getBirthdayGift =
+    (p: Person): string => strike(
+        p,
+        match(
+            {hobby: 'woodworking'},
+            'Table saw'
+        ),
+        match(
+            {hobby: 'welding'},
+            'TIG welder'
+        ),
+        otherwise('Money'),
+    );
 
 assert(getBirthdayGift(steve) === 'Table saw');
 assert(getBirthdayGift(john) === 'TIG welder');

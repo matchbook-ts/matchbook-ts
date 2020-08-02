@@ -8,21 +8,27 @@ function run() {
     const hashMap = readHashMap();
 
     const snippetFiles = readdirSync('src');
-    snippetFiles
-        .filter(file => !file.startsWith('.'))
-        .forEach(file => {
-            const hash = createHashForFile(file);
-            const hashFromMap = hashMap[file];
 
-            if (!hashFromMap || hashFromMap !== hash) {
-                try {
-                    genScreenshot(file);
-                    hashMap[file] = hash;
-                } catch(e) {
-                    console.error(e.message);
-                }
+    const not = fn => (...args) => !fn(...args);
+    const filenameHasLeadingDot = file => file.startsWith('.');
+    const tackFileHash = file => [file, createHashForFile(file)];
+    const tackExistingHash = ([file, _]) => [file, _, hashMap[file]];
+    const hasHashChanged = ([_, hash, existingHash]) => !existingHash || hash !== existingHash;
+    const updateScreenshotAndHash = ([file, hash, _]) => {
+            try {
+                genScreenshot(file);
+                hashMap[file] = hash;
+            } catch(e) {
+                console.error(e.message);
             }
-        });
+        };
+
+    snippetFiles
+        .filter(not(filenameHasLeadingDot))
+        .map(tackFileHash)
+        .map(tackExistingHash)
+        .filter(hasHashChanged)
+        .forEach(updateScreenshotAndHash);
 
     saveHashMap(hashMap);
 }
@@ -31,9 +37,14 @@ run();
 
 function genScreenshot(fileName) {
     const fileSansExt = fileName.replace('.ts', '');
-    const script = `carbon-now src/${fileName} -p matchbook --target static/${fileSansExt}`;
+    const args = [
+        'carbon-now',
+        `src/${fileName}`,
+        '-p', 'matchbook',
+        '--target', `static/${fileSansExt}`
+    ];
 
-    const process = spawnSync('cmd', ['/k', script], {encoding: 'utf8'});
+    const process = spawnSync('npx', args, {encoding: 'utf8'});
 
     if (process.stderr) throw new Error(process.stderr);
 }
