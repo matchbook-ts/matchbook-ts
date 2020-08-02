@@ -14,4 +14,7 @@ const getSaying: (h: Human) => string = pattern(
 );
 
 assert(getSaying(new Spiderman()) === 'thwipp!');
-assert(getSaying(new Teacher()) === 'humany things');
+
+assert(
+    getSaying(new Teacher()) === 'humany things'
+);

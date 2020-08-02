@@ -1,16 +1,15 @@
 import { match, _ } from '@matchbook/ts';
-//             ^^^
-// `_` is an available alias for `otherwise`.
+//             ^^^ `_` is an alias for `otherwise`
 
 enum EventType { Message, ... }
 interface Event { ... }
 interface MessageEvent extends Event { ... }
 
-// the 'is' keyword in the return type
-// tells typescript that if `isMessage` returns
-// `true`, then `e` is of type `MessageEvent`.
-//                            v v v v v v v v v
 function isMessage(e: Event): e is MessageEvent {
+//                            ^^^^^^^^^^^^^^^^^
+//          the 'is' keyword tells typescript that
+//          if `isMessage` returns `true`,
+//          then `e` is of type `MessageEvent`.
     return e.type === EventType.Message;
 }
 
