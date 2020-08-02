@@ -89,6 +89,7 @@ want to know more? [read the docs][api_docs]!
 ![enum example](assets/readme-samples/static/enum.snippet.png)
 
 ### acting on the type of an Event
+[Type guards][type_guard]
 ![enum example](assets/readme-samples/static/type_guard.snippet.png)
 
 ### matching if a value is an `instanceof` a constructor
@@ -112,3 +113,4 @@ want to know more? [read the docs][api_docs]!
 [new_issue]: https://github.com/matchbook-ts/matchbook-ts/issues/new
 [gts_badge]: https://img.shields.io/badge/code%20style-google-blueviolet.svg
 [gts_url]: https://github.com/google/gts
+[type_guard]: https://www.typescriptlang.org/docs/handbook/advanced-types.html#using-type-predicates
