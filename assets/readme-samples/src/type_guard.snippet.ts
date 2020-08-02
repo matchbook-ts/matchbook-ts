@@ -15,7 +15,7 @@ function isMessage(e: Event): e is MessageEvent {
 
 const handleEvent = (e: Event) => strike(
     e,
-    match(isMessage, m => `you got a message! "${m.text}"`),
+    match(isMessage, m => `new message! "${m.text}"`),
     _('Event type not supported')
 );
 
