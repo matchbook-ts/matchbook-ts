@@ -25,7 +25,12 @@ const handleEvent = (e: Event) => strike(
     _('Event type not supported')
 );
 
+let message = {
+    text: 'hello :)',
+    ...,
+};
+
 assertEq(
     handleEvent(message),
-    'you got a message!'
+    'new message! "hello :)"'
 );
