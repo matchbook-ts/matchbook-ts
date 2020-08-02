@@ -1,4 +1,4 @@
-import { match, pattern, otherwise } from '@matchbook/ts';
+import { match, strike, otherwise } from '@matchbook/ts';
 
 type Person = { name: string, hobby: string, };
 
@@ -12,7 +12,8 @@ const john: Person = {
     hobby: 'Metalworking',
 };
 
-const getBirthdayGift: (c: Person) => string = pattern(
+const getBirthdayGift = (p: Person): string => strike(
+    p,
     match({ hobby: 'Woodworking' }, 'Table saw'),
     match({ hobby: 'Metalworking' }, 'TIG welder'),
     otherwise('Money'),

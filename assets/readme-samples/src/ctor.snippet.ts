@@ -1,4 +1,4 @@
-import { match, unwrap } from '@matchbook/ts';
+import { match, otherwise } from '@matchbook/ts';
 
 class Human { ... }
 class Teacher extends Human { ... }
@@ -10,10 +10,8 @@ const getSaying: (h: Human) => string = pattern(
     match(Spiderman,          'thwipp!'),
     match(Formula1Driver,     'vrooommmm'),
     match(ConstructionWorker, '*whistle*'),
-    unwrap, // throw if `h` matched none of the above
+    otherwise('humany things'),
 );
 
 assert(getSaying(new Spiderman()) === 'thwipp!');
-
-// this throws an `UnwrapError`!
-getSaying(new Teacher());
+assert(getSaying(new Teacher()) === 'humany things');
