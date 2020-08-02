@@ -3,7 +3,10 @@ import { strike, match, _ } from '@matchbook/ts';
 
 enum EventType { Message, ... }
 interface Event { ... }
-interface MessageEvent extends Event { text: string, ... }
+interface MessageEvent extends Event {
+    text: string,
+    ...
+}
 
 function isMessage(e: Event): e is MessageEvent {
     //                        ~~~~~~~~~~~~~~~~~
@@ -15,7 +18,10 @@ function isMessage(e: Event): e is MessageEvent {
 
 const handleEvent = (e: Event) => strike(
     e,
-    match(isMessage, m => `new message! "${m.text}"`),
+    match(
+        isMessage,
+        m => `new message! "${m.text}"`
+    ),
     _('Event type not supported')
 );
 
