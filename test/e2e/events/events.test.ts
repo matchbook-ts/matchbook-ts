@@ -1,6 +1,6 @@
 /* eslint-disable node/no-unpublished-import */
 import test from 'ava';
-import {match, unwrap, pattern} from '../../../src';
+import {match, rest, strike} from '../../../src';
 import {
     Event,
     EventType,
@@ -11,13 +11,14 @@ import {
 } from './types';
 
 /**
- * @file e2e test using `pattern`, Type Guard matching, and `unwrap`
+ * @file e2e test using exhaustive Type Guard matching
  */
 
-const getLogMessage: (event: Event) => string = pattern(
+const getLogMessage = (e: Event) => strike(
+    e,
     match(isMessage, m => `you posted a message: ${m.messageBody}`),
     match(isReaction, r => `this is an emoji: ${r.reactionEmojiCode}`),
-    unwrap
+    rest(`Unsupported event type: ${e.eventType}`),
 );
 
 test('e2e(events): `getLogMessage` should return correct message, when event is message', t => {
@@ -52,15 +53,15 @@ test('e2e(events): `getLogMessage` should return correct message, when event is 
     t.is(actual, 'this is an emoji: :eggplant:');
 });
 
-test('e2e(events): `getLogMessage` should throw, when event is not supported', t => {
+test('e2e(events): `getLogMessage` should let us know when event is not supported', t => {
     // arrange
     const uhOh: Event = {
         eventType: EventType.MessageDeleted,
     };
 
     // act
-    const closure = () => getLogMessage(uhOh);
+    const actual = getLogMessage(uhOh);
 
     // assert
-    t.throws(closure);
+    t.is(actual, 'Unsupported event type: message_removed');
 });
