@@ -1,4 +1,8 @@
-import { match, strike, otherwise } from '@matchbook/ts';
+import {
+    match,
+    strike,
+    otherwise
+} from '@matchbook/ts';
 
 type Person = { name: string, hobby: string, };
 
