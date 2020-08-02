@@ -25,4 +25,7 @@ const handleEvent = (e: Event) => strike(
     _('Event type not supported')
 );
 
-assert(handleEvent(message) === 'you got a message!');
+assertEq(
+    handleEvent(message),
+    'you got a message!'
+);
