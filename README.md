@@ -54,14 +54,8 @@ _(list is in no particular order)_
 ## what you can do for matchbook
 ### use it!
 
-The project is currently in `beta`, meaning the functionality & API are complete &
-fully covered by tests, but the library hasn't been battle-tested and may need
-some final tweaks before v1.0.0.
-
-### watch it!
-
-Watch the project for releases to be notified of cool new features,
-and the v1.0.0 release!
+The project is very minimal, with the intent of starting with a very simple & focused API
+that grows with its needs.
 
 ### ask questions!
 
