@@ -1,8 +1,4 @@
-import {
-    match,
-    strike,
-    otherwise
-} from '@matchbook/ts';
+import { match, strike, otherwise } from '@matchbook/ts';
 
 enum Coin {
     Nickel,
